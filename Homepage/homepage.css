@@ -1,31 +1,31 @@
 /*   
-   HOPAPCU WEBSITE —STYLESHEET 
+   HOPAPCU WEBSITE — HOMEPAGE STYLESHEET 
+   File: Homepage/homepage.css
+
    CONTENTS:
    1.  Tokens & Reset
    2.  Navbar
    3.  Hero
    4.  Mission Strip
-   5.  Benefits Cardsc
+   5.  Benefits Cards
    6.  Stats Bar
    7.  News Section
    8.  Partners Strip
    9.  Footer
    10. Utilities & Animations
    11. Mobile Responsive
-   */
-
-
-/* 1. TOKENS & RESET 
-   All colors and fonts defined here.
 */
-:root {
-  --gold:    #C9A800;   
-  --honey:   #F5C400;  
-  --black:   #1A1A1A;    
-  --cream:   #FAFAF5;  
-  --white:   #FFFFFF;   
-  --muted:   #666666;   
 
+
+/* ─── 1. TOKENS & RESET ─────────────────────────── */
+:root {
+  --gold:         #C9A800;
+  --honey:        #F5C400;
+  --black:        #1A1A1A;
+  --cream:        #FAFAF5;
+  --white:        #FFFFFF;
+  --gray:         #F0EDE6;
+  --muted:        #666666;
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body:    'DM Sans', Arial, sans-serif;
 }
@@ -38,7 +38,9 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 25px;
+  /* Base font size — all rem units scale from this.
+     Change this one number to scale everything up or down. */
+  font-size: 20px;
 }
 
 body {
@@ -46,7 +48,6 @@ body {
   background: var(--cream);
   color: var(--black);
   line-height: 1.6;
-  /* Prevent horizontal scroll on mobile */
   overflow-x: hidden;
 }
 
@@ -61,24 +62,24 @@ a {
 }
 
 
-/* 2. NAVBAR .
- */
+/* ─── 2. NAVBAR ─────────────────────────────────── */
+/*
+  Sticky black bar. Logo + name left. Links right.
+  Hamburger replaces links below 900px.
+*/
 nav {
   position: sticky;
   top: 0;
   z-index: 100;
   background: var(--black);
-  padding: 0 2.5rem;
+  padding: 0.75rem 2.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: auto;
-  min-height:  68px;
-  padding:0.75rem 2.5rem;
+  min-height: 68px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
 
-/* Logo: circular image + org name text */
 .nav-brand {
   display: flex;
   align-items: center;
@@ -91,11 +92,12 @@ nav {
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--gold);
+  /* Image pixels don't scale with rem — fixed px is correct here */
 }
 
 .nav-brand-text {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--honey);
   line-height: 1.1;
@@ -104,22 +106,21 @@ nav {
 .nav-brand-text span {
   display: block;
   font-family: var(--font-body);
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.5);
 }
 
-/* Nav links */
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   list-style: none;
 }
 
 .nav-links a {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -131,7 +132,21 @@ nav {
   color: var(--honey);
 }
 
-/* Mobile hamburger — hidden on desktop */
+/* Dropdown menu — shown when .nav-open is toggled by JS */
+.nav-links.nav-open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 68px;
+  left: 0;
+  right: 0;
+  background: var(--black);
+  padding: 1.5rem 2rem;
+  gap: 1.25rem;
+  z-index: 99;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -151,15 +166,13 @@ nav {
 }
 
 
-/* ─── 3. HERO ──────────────────────────────────────
-   Full-bleed. Real group photo as background.
-   Dark overlay left side for text legibility.
-   Headline + two CTAs over the overlay.
-
-   Signature element: diagonal overlay that lets the
-   real photo show through on the right — feels like
-   a news feature, not a template.
-─────────────────────────────────────────────────── */
+/* ─── 3. HERO ───────────────────────────────────── */
+/*
+  Full-bleed group photo. Uniform dark overlay —
+  dark enough for text contrast, light enough that
+  people in the photo are clearly visible.
+  Text centered over the image.
+*/
 .hero {
   position: relative;
   min-height: 92vh;
@@ -168,8 +181,6 @@ nav {
   overflow: hidden;
 }
 
-/* Background photo */
-/* the diagonal overlay *********************
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -179,38 +190,11 @@ nav {
   z-index: 0;
 }
 
-/* Diagonal overlay — left dark, right photo shows through 
+/* Uniform overlay — not diagonal, people visible */
 .hero-bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    105deg,
-    rgba(26,26,26,0.96) 0%,
-    rgba(26,26,26,0.92) 45%,
-    rgba(26,26,26,0.55) 65%,
-    rgba(26,26,26,0.15) 100%
-  );
-  z-index: 1;
-}
-  */
-
-
-/* version 2 */
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('../resources/images/group-photo.jpeg');
-  background-size: cover;
-  background-position: center top;
-  z-index: 0;
-}
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  /* Uniform overlay — people visible but text readable */
   background: rgba(26,26,26,0.62);
   z-index: 1;
 }
@@ -225,13 +209,11 @@ nav {
   text-align: center;
 }
 
-
-
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -239,7 +221,6 @@ nav {
   margin-bottom: 1.5rem;
 }
 
-/* Small horizontal rule before eyebrow */
 .hero-eyebrow::before {
   content: '';
   display: block;
@@ -250,12 +231,11 @@ nav {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
   font-weight: 700;
   color: var(--white);
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  /* Italic on last word for visual interest */
 }
 
 .hero-title em {
@@ -264,27 +244,27 @@ nav {
 }
 
 .hero-sub {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.72);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.75);
   line-height: 1.75;
-  max-width: 480px;
-  margin-bottom: 2.5rem;
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
 }
 
 .hero-ctas {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Primary button — honey yellow */
 .btn-primary {
   background: var(--honey);
   color: var(--black);
   font-weight: 700;
-  font-size: 0.825rem;
+  font-size: 0.8rem;
   letter-spacing: 0.04em;
-  padding: 0.9rem 2.25rem;
+  padding: 0.9rem 2rem;
   border-radius: 3px;
   transition: background 0.2s, transform 0.15s;
 }
@@ -294,14 +274,13 @@ nav {
   transform: translateY(-2px);
 }
 
-/* Secondary button — outline */
 .btn-outline {
   background: transparent;
   color: var(--white);
   font-weight: 600;
-  font-size: 0.825rem;
+  font-size: 0.8rem;
   letter-spacing: 0.04em;
-  padding: 0.9rem 2.25rem;
+  padding: 0.9rem 2rem;
   border-radius: 3px;
   border: 1.5px solid rgba(255,255,255,0.45);
   transition: border-color 0.2s, background 0.2s;
@@ -312,7 +291,6 @@ nav {
   background: rgba(255,255,255,0.08);
 }
 
-/* Small scroll hint at bottom of hero */
 .hero-scroll-hint {
   position: absolute;
   bottom: 2rem;
@@ -324,7 +302,7 @@ nav {
   align-items: center;
   gap: 0.4rem;
   color: rgba(255,255,255,0.35);
-  font-size: 0.65rem;
+  font-size: 0.55rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -338,38 +316,38 @@ nav {
 
 @keyframes scrollPulse {
   0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; }
+  50%       { opacity: 1; }
 }
 
 
-/* ─── 4. MISSION STRIP ─────────────────────────────
-   White background. Logo left, mission text right.
-   Clean, institutional, calm.
-─────────────────────────────────────────────────── */
+/* ─── 4. MISSION STRIP ──────────────────────────── */
+/*
+  White background. Logo left, mission text right.
+*/
 .mission {
   background: var(--white);
-  padding: 5rem 5rem;
+  padding: 5rem;
 }
 
 .mission-inner {
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 160px 1fr;
+  grid-template-columns: 180px 1fr;
   gap: 4rem;
   align-items: center;
 }
 
 .mission-logo {
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--gold);
 }
 
 .mission-label {
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -387,18 +365,18 @@ nav {
 }
 
 .mission-text {
-  font-size: 0.975rem;
+  font-size: 0.9rem;
   color: var(--muted);
   line-height: 1.8;
-  max-width: 560px;
+  max-width: 600px;
 }
 
 
-/* ─── 5. BENEFITS CARDS ────────────────────────────
-   3 cards on gold/honey background.
-   Icon placeholder + title + description.
-   This section anchors the "why join us" message.
-─────────────────────────────────────────────────── */
+/* ─── 5. BENEFITS CARDS ─────────────────────────── */
+/*
+  3 cards on honey-yellow background.
+  Numbers anchor each card visually.
+*/
 .benefits {
   background: var(--honey);
   padding: 5rem;
@@ -410,7 +388,7 @@ nav {
 }
 
 .section-label {
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -421,7 +399,7 @@ nav {
 
 .section-title {
   font-family: var(--font-display);
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--black);
   margin-bottom: 2.5rem;
@@ -438,7 +416,6 @@ nav {
   background: var(--white);
   border-radius: 4px;
   padding: 2rem 1.75rem;
-  /* Subtle left border in gold for each card */
   border-left: 4px solid var(--gold);
 }
 
@@ -449,27 +426,26 @@ nav {
   color: var(--honey);
   line-height: 1;
   margin-bottom: 0.75rem;
-  /* The number acts as visual anchor, not decoration */
 }
 
 .card-title {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--black);
   margin-bottom: 0.6rem;
 }
 
 .card-text {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   color: var(--muted);
   line-height: 1.7;
 }
 
 
-/* ─── 6. STATS BAR ─────────────────────────────────
-   Black background. 4 numbers in a row.
-   Trust signal — quick credibility hit.
-─────────────────────────────────────────────────── */
+/* ─── 6. STATS BAR ──────────────────────────────── */
+/*
+  Black background. Trust numbers in a row.
+*/
 .stats {
   background: var(--black);
   padding: 3.5rem 5rem;
@@ -479,7 +455,7 @@ nav {
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
@@ -498,7 +474,7 @@ nav {
 }
 
 .stat-label {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -507,11 +483,11 @@ nav {
 }
 
 
-/* ─── 7. NEWS SECTION ──────────────────────────────
-   Cream background. Section header row.
-   3 cards with photo placeholders.
-   Cards lift on hover.
-─────────────────────────────────────────────────── */
+/* ─── 7. NEWS SECTION ───────────────────────────── */
+/*
+  Cream background. Header row + 3 cards.
+  Cards lift on hover. Photos zoom subtly.
+*/
 .news {
   background: var(--cream);
   padding: 5rem;
@@ -534,7 +510,7 @@ nav {
 }
 
 .link-arrow {
-  font-size: 0.825rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--gold);
   border-bottom: 1.5px solid var(--gold);
@@ -563,7 +539,6 @@ nav {
   box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
-/* Photo area — will hold real photos later */
 .news-img {
   height: 200px;
   overflow: hidden;
@@ -573,7 +548,6 @@ nav {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Slight zoom on hover via parent */
   transition: transform 0.4s ease;
 }
 
@@ -581,7 +555,7 @@ nav {
   transform: scale(1.04);
 }
 
-/* Placeholder shown before real photo is assigned */
+/* Shown when no real photo is available yet */
 .news-img-placeholder {
   width: 100%;
   height: 100%;
@@ -590,7 +564,7 @@ nav {
   align-items: center;
   justify-content: center;
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   letter-spacing: 0.06em;
 }
 
@@ -599,7 +573,7 @@ nav {
 }
 
 .news-date {
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -609,7 +583,7 @@ nav {
 
 .news-title {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--black);
   line-height: 1.35;
@@ -617,24 +591,24 @@ nav {
 }
 
 .news-excerpt {
-  font-size: 0.825rem;
+  font-size: 0.78rem;
   color: var(--muted);
   line-height: 1.65;
   margin-bottom: 1rem;
 }
 
 .news-link {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--gold);
 }
 
 
-/* ─── 8. PARTNERS STRIP ────────────────────────────
-   White background, centered.
-   Logo placeholders in a row.
-   Sits just above footer — credibility signal.
-─────────────────────────────────────────────────── */
+/* ─── 8. PARTNERS STRIP ─────────────────────────── */
+/*
+  White background. Logo placeholders in a row.
+  Sits just above footer.
+*/
 .partners {
   background: var(--white);
   padding: 3.5rem 5rem;
@@ -648,7 +622,7 @@ nav {
 }
 
 .partners-label {
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -664,25 +638,24 @@ nav {
   flex-wrap: wrap;
 }
 
-/* Each partner logo placeholder */
 .partner-slot {
-  width: 110px;
-  height: 52px;
+  width: 120px;
+  height: 56px;
   background: var(--gray);
   border-radius: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   color: var(--muted);
 }
 
 
-/* ─── 9. FOOTER ────────────────────────────────────
-   Black background. 3 columns.
-   Brand blurb | Quick links | Contact info.
-   Gold accent on headings. Copyright at bottom.
-─────────────────────────────────────────────────── */
+/* ─── 9. FOOTER ─────────────────────────────────── */
+/*
+  Black background. 3 columns: brand | links | contact.
+  Gold headings. Copyright line at bottom.
+*/
 footer {
   background: var(--black);
   padding: 4rem 5rem 2.5rem;
@@ -713,20 +686,20 @@ footer {
 
 .footer-brand-name {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--honey);
   margin-bottom: 0.6rem;
 }
 
 .footer-brand-text {
-  font-size: 0.825rem;
+  font-size: 0.78rem;
   color: rgba(255,255,255,0.45);
   line-height: 1.7;
-  max-width: 240px;
+  max-width: 260px;
 }
 
 .footer-col h4 {
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -741,9 +714,9 @@ footer {
   gap: 0.6rem;
 }
 
-.footer-col ul li a,
-.footer-col ul li {
-  font-size: 0.825rem;
+.footer-col ul li,
+.footer-col ul li a {
+  font-size: 0.78rem;
   color: rgba(255,255,255,0.5);
   transition: color 0.15s;
 }
@@ -754,17 +727,17 @@ footer {
 
 .footer-bottom {
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   color: rgba(255,255,255,0.25);
 }
 
 
-/* ─── 10. UTILITIES & ANIMATIONS ───────────────────
-   Fade-in on scroll — subtle, not distracting.
-   Applied to cards and sections as they enter view.
-─────────────────────────────────────────────────── */
-
-/* Elements start invisible, JS adds .visible to trigger */
+/* ─── 10. UTILITIES & ANIMATIONS ────────────────── */
+/*
+  Fade-in on scroll.
+  JS adds .visible when element enters viewport.
+  CSS handles the actual transition.
+*/
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -776,7 +749,7 @@ footer {
   transform: none;
 }
 
-/* Respect reduced motion preference */
+/* Never animate for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .fade-in {
     opacity: 1;
@@ -787,27 +760,30 @@ footer {
 }
 
 
-/* ─── 11. MOBILE RESPONSIVE ────────────────────────
-   Below 768px: single column, reduced padding.
-   Nav collapses to hamburger.
-─────────────────────────────────────────────────── */
-@media (max-width: 900px) {
-  .cards-grid { grid-template-columns: 1fr 1fr; }
-  .news-grid { grid-template-columns: 1fr 1fr; }
-}
+/* ─── 11. MOBILE RESPONSIVE ─────────────────────── */
 
-/* Hide subtitle text at 1024px so nav doesn't crowd */
+/* Tablet: 2 column grids */
 @media (max-width: 1024px) {
+  /* Hide the subtitle under HOPAPCU in nav — too crowded */
   .nav-brand-text span { display: none; }
 }
 
+/* Below 900px: hamburger menu, single column layouts */
 @media (max-width: 900px) {
   /* Nav */
-  nav { padding: 0 1.25rem; }
+  nav { padding: 0.75rem 1.25rem; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
 
-  /* Hero */
+  /* Cards go 2 column on tablet, 1 on mobile */
+  .cards-grid { grid-template-columns: 1fr 1fr; }
+  .news-grid  { grid-template-columns: 1fr 1fr; }
+
+  /* Hero — center the image so the group is visible on narrow screens */
+  .hero-bg {
+    background-position: center center;
+  }
+
   .hero-content {
     padding: 4rem 1.5rem;
     max-width: 100%;
@@ -824,13 +800,11 @@ footer {
   .mission-text { max-width: 100%; }
 
   .benefits { padding: 3rem 1.5rem; }
-  .cards-grid { grid-template-columns: 1fr; }
 
   .stats { padding: 2.5rem 1.5rem; }
   .stats-inner { justify-content: center; gap: 2.5rem; }
 
   .news { padding: 3rem 1.5rem; }
-  .news-grid { grid-template-columns: 1fr; }
   .news-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
 
   .partners { padding: 2.5rem 1.5rem; }
@@ -838,4 +812,10 @@ footer {
 
   footer { padding: 3rem 1.5rem 2rem; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* Mobile: everything single column */
+@media (max-width: 600px) {
+  .cards-grid { grid-template-columns: 1fr; }
+  .news-grid  { grid-template-columns: 1fr; }
 }

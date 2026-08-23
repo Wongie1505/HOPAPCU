@@ -18,3 +18,10 @@
     );
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('nav-open');
+});
