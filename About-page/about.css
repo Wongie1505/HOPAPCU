@@ -13,7 +13,7 @@
   8.  Mobile Responsive
 */
 
-/* ─── 1. TOKENS & RESET  */
+/* ─── 1. TOKENS & RESET ─────────────────────────── */
 :root {
   --gold:         #C9A800;
   --honey:        #F5C400;
@@ -56,8 +56,8 @@ a {
 }
 
 
-/*  2. NAVBAR & FOOTER  */
-/* (Same as homepage) */
+/* ─── 2. NAVBAR & FOOTER ────────────────────────── */
+/* (Same as homepage — copied for completeness) */
 
 nav {
   position: sticky;
@@ -231,14 +231,41 @@ footer {
 }
 
 
-/*  3. PAGE HEADER  */
+/* 3. PAGE HEADER  */
 
 .page-header {
-  background: linear-gradient(135deg, var(--black) 0%, rgba(26,26,26,0.95) 100%);
+  background-image: url("../resources/images/group-photo.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--black);
   color: var(--white);
   padding: 6rem 2rem;
   text-align: center;
   border-bottom: 3px solid var(--gold);
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+  border-radius: 0;
+}
+
+.page-header-content {
+  position: relative;
+  z-index: 2;
 }
 
 .page-header-content {
@@ -261,7 +288,7 @@ footer {
 }
 
 
-/*  4. SECTION 1: WHO WE ARE  */
+/* ─── 4. SECTION 1: WHO WE ARE ──────────────────── */
 
 .section-who-we-are {
   background: var(--cream);
@@ -424,7 +451,7 @@ footer {
 }
 
 
-/*  5. SECTION 2: LEADERSHIP  */
+/* ─── 5. SECTION 2: LEADERSHIP ──────────────────── */
 
 .section-leadership {
   background: var(--white);
@@ -567,7 +594,7 @@ footer {
 }
 
 
-/*  6. SECTION 3: ACCOUNTABILITY  */
+/* ─── 6. SECTION 3: ACCOUNTABILITY ─────────────── */
 
 .section-accountability {
   background: var(--cream);
@@ -639,6 +666,108 @@ footer {
   transform: translateY(-2px);
 }
 
+/* ─── GALLERY ────────────────────────────────── */
+
+.section-gallery {
+  background: var(--cream);
+  padding: 5rem;
+}
+
+.gallery-intro {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 3rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.gallery-item {
+  background: var(--white);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.gallery-thumbnail {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover .gallery-thumbnail {
+  transform: scale(1.05);
+}
+
+.gallery-caption {
+  padding: 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--black);
+  text-align: center;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  animation: fadeIn 0.3s;
+}
+
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-image {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: var(--white);
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: var(--gold);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* ─── PARTNERS ────────────────────────────────── */
+
 /* Partners */
 .partners-accountability {
   background: var(--white);
@@ -650,32 +779,84 @@ footer {
 .partners-intro {
   font-size: 0.95rem;
   color: var(--muted);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   line-height: 1.8;
 }
 
-.partners-grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+.partners-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--white);
 }
 
-.partner-slot {
-  width: 120px;
-  height: 56px;
-  background: var(--gray);
-  border-radius: 3px;
+.partners-scroll {
   display: flex;
+  gap: 2rem;
+  padding: 1rem 0;
+  animation: autoScroll 40s linear infinite;
+  will-change: transform;
+}
+
+/* Auto-scroll animation — scroll by 11 cards (one full set) */
+@keyframes autoScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Scrolls exactly one full cycle of 11 cards, then jumps back seamlessly */
+    transform: translateX(calc(-11 * (50vw - 0.5rem + 2rem)));
+  }
+}
+
+/* Pause animation on hover or focus */
+.partners-carousel:hover .partners-scroll,
+.partners-carousel:focus-within .partners-scroll {
+  animation-play-state: paused;
+}
+
+.partner-card {
+  flex: 0 0 calc(50% - 1rem);
+  background: var(--cream);
+  border-radius: 4px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 0.65rem;
+  text-align: center;
+  scroll-snap-align: start;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.partner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.partner-logo {
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.partner-name,
+.partner-name-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--black);
+  line-height: 1.4;
+}
+
+.partner-note {
+  font-size: 0.8rem;
   color: var(--muted);
+  margin-top: 0.5rem;
+  line-height: 1.5;
 }
 
 
-/*  7. UTILITIES & ANIMATIONS  */
+/* ─── 7. UTILITIES & ANIMATIONS ─────────────────── */
 
 .fade-in {
   opacity: 0;
@@ -697,7 +878,7 @@ footer {
 }
 
 
-/*  8. MOBILE RESPONSIVE  */
+/* ─── 8. MOBILE RESPONSIVE ──────────────────────── */
 
 @media (max-width: 1024px) {
   .nav-brand-text span { display: none; }
@@ -760,11 +941,22 @@ footer {
     grid-template-columns: 1fr;
   }
   
+  .partner-card {
+    flex: 0 0 calc(100% - 1rem);
+  }
+  
   .vm-box,
   .membership-info,
   .governance-overview,
   .partners-accountability {
     padding: 1.5rem;
+  }
+
+  .page-header {
+    background-size: contain;
+    background-position: center;
+    height: auto;
+    min-height: 400px;
   }
   
   .subsection-title {

@@ -50,7 +50,7 @@
   </section>
 
 
-  <!--   SECTION 1: WHO WE ARE   -->
+  <!-- ===== SECTION 1: WHO WE ARE ===== -->
   <section class="section-who-we-are">
     <div class="section-inner">
 
@@ -169,7 +169,31 @@
   </section>
 
 
-  <!--   SECTION 2: LEADERSHIP   -->
+  <!-- ===== SECTION: GALLERY ===== -->
+  <section class="section-gallery">
+    <div class="section-inner">
+      <h2 class="section-title fade-in">HOPAPCU Community</h2>
+      <p class="gallery-intro fade-in">
+        Meet the members, leaders, and partners who make HOPAPCU work. Click on the image to view in full.
+      </p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item fade-in">
+          <img src="../resources/images/group-photo.jpeg" alt="HOPAPCU members and leadership" class="gallery-thumbnail"/>
+          <p class="gallery-caption">HOPAPCU Members & Leadership</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for full-screen image view -->
+  <div id="imageModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-image" id="modalImage" src="" alt="Full size image"/>
+  </div>
+
+
+  <!-- ===== SECTION 2: LEADERSHIP ===== -->
   <section class="section-leadership">
     <div class="section-inner">
 
@@ -359,7 +383,7 @@
   </section>
 
 
-  <!--   SECTION 3: ACCOUNTABILITY   -->
+  <!-- ===== SECTION 3: ACCOUNTABILITY ===== -->
   <section class="section-accountability">
     <div class="section-inner">
 
@@ -420,14 +444,101 @@
       <div class="partners-accountability fade-in">
         <h3 class="subsection-title">Partners & Affiliations</h3>
         <p class="partners-intro">
-          We work alongside trusted partners who share our vision for sustainable beekeeping and cooperative development:
+          We work alongside trusted partners who share our vision for sustainable beekeeping and cooperative development.
         </p>
-        <div class="partners-grid">
-          <div class="partner-slot">Partner Logo</div>
-          <div class="partner-slot">Partner Logo</div>
-          <div class="partner-slot">Partner Logo</div>
-          <div class="partner-slot">Partner Logo</div>
-          <div class="partner-slot">Partner Logo</div>
+        <div class="partners-carousel" id="partnersCarousel">
+          <div class="partners-scroll" id="partnersScroll">
+            <!-- Original 11 partners -->
+            <div class="partner-card">
+              <img src="../resources/images/malawi-coat-of-arms.png" alt="Ministry of Industrialization" class="partner-logo"/>
+              <p class="partner-name">Ministry of Industrialization, Business, Trade & Tourism</p>
+            </div>
+            <div class="partner-card">
+              <p class="partner-name-text">FAAD</p>
+              <p class="partner-note">(Forum for Apicultural and Agricultural Development)</p>
+            </div>
+            <div class="partner-card">
+              <img src="../resources/images/partner-mafeco.png" alt="MAFECO" class="partner-logo"/>
+              <p class="partner-name">Malawi Federation of Cooperatives Union</p>
+            </div>
+            <div class="partner-card">
+              <img src="../resources/images/partner-mbpa.png" alt="MBPA" class="partner-logo"/>
+              <p class="partner-name">Malawi Bee Products Association</p>
+            </div>
+            <div class="partner-card">
+              <img src="../resources/images/partner-bfd.png" alt="Bees for Development" class="partner-logo"/>
+              <p class="partner-name">Bees for Development</p>
+            </div>
+            <div class="partner-card">
+              <img src="../resources/images/malawi-coat-of-arms.png" alt="Ministry of Agriculture" class="partner-logo"/>
+              <p class="partner-name">Ministry of Agriculture and Water Development</p>
+            </div>
+            <div class="partner-card">
+              <img src="../resources/images/malawi-coat-of-arms.png" alt="Department of Forestry" class="partner-logo"/>
+              <p class="partner-name">Department of Forestry and Natural Resources</p>
+            </div>
+            <div class="partner-card">
+              <img src="../resources/images/partner-mitc.png" alt="MITC" class="partner-logo"/>
+              <p class="partner-name">Malawi Investment Trade Centre</p>
+            </div>
+            <div class="partner-card">
+              <img src="../resources/images/partner-musme.png" alt="MUSME" class="partner-logo"/>
+              <p class="partner-name">Malawi Union of Small Medium Enterprises</p>
+            </div>
+            <div class="partner-card">
+              <img src="../resources/images/partner-trade-programme.png" alt="Trade Programme Project" class="partner-logo"/>
+              <p class="partner-name">Trade Programme Project</p>
+            </div>
+            <div class="partner-card">
+              <img src="../resources/images/partner-fyf.png" alt="Find Your Feet" class="partner-logo"/>
+              <p class="partner-name">Find Your Feet</p>
+            </div>
+            <!-- Duplicates for seamless infinite loop (all 11 again) -->
+            <div class="partner-card">
+              <img src="../resources/images/malawi-coat-of-arms.png" alt="Ministry of Industrialization" class="partner-logo"/>
+              <p class="partner-name">Ministry of Industrialization, Business, Trade & Tourism</p>
+            </div>
+            <div class="partner-card">
+              <p class="partner-name-text">FAAD</p>
+              <p class="partner-note">(Forum for Apicultural and Agricultural Development)</p>
+            </div>
+            <div class="partner-card">
+              <img src="../resources/images/partner-mafeco.png" alt="MAFECO" class="partner-logo"/>
+              <p class="partner-name">Malawi Federation of Cooperatives Union</p>
+            </div>
+            <div class="partner-card">
+              <img src="../resources/images/partner-mbpa.png" alt="MBPA" class="partner-logo"/>
+              <p class="partner-name">Malawi Bee Products Association</p>
+            </div>
+            <div class="partner-card">
+              <img src="../resources/images/partner-bfd.png" alt="Bees for Development" class="partner-logo"/>
+              <p class="partner-name">Bees for Development</p>
+            </div>
+            <div class="partner-card">
+              <img src="../resources/images/malawi-coat-of-arms.png" alt="Ministry of Agriculture" class="partner-logo"/>
+              <p class="partner-name">Ministry of Agriculture and Water Development</p>
+            </div>
+            <div class="partner-card">
+              <img src="../resources/images/malawi-coat-of-arms.png" alt="Department of Forestry" class="partner-logo"/>
+              <p class="partner-name">Department of Forestry and Natural Resources</p>
+            </div>
+            <div class="partner-card">
+              <img src="../resources/images/partner-mitc.png" alt="MITC" class="partner-logo"/>
+              <p class="partner-name">Malawi Investment Trade Centre</p>
+            </div>
+            <div class="partner-card">
+              <img src="../resources/images/partner-musme.png" alt="MUSME" class="partner-logo"/>
+              <p class="partner-name">Malawi Union of Small Medium Enterprises</p>
+            </div>
+            <div class="partner-card">
+              <img src="../resources/images/partner-trade-programme.png" alt="Trade Programme Project" class="partner-logo"/>
+              <p class="partner-name">Trade Programme Project</p>
+            </div>
+            <div class="partner-card">
+              <img src="../resources/images/partner-fyf.png" alt="Find Your Feet" class="partner-logo"/>
+              <p class="partner-name">Find Your Feet</p>
+            </div>
+          </div>
         </div>
       </div>
 

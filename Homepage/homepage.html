@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,19 +53,20 @@
 
   <!-- 
        HERO
-       Diagonal dark overlay - text left, photo bleeds
-       through on the right side.
-       Two CTA buttons: Join Cooperative + Visit Marketplace.
--->
+       Split layout: dark text box left (45%) with diagonal edge,
+       beekeeping image right (55%) bleeds behind.
+  -->
   <section class="hero">
-    <div class="hero-bg"></div>
+    <div class="hero-image"></div>
+
+    <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <p class="hero-eyebrow">Malawi's Beekeeping Cooperative</p>
+      <p class="hero-eyebrow">Malawi's Beekeeping Cooperative Union</p>
 
       <h1 class="hero-title">
         Where Beekeeping<br/>
-        Sustainss <em>Livelihood and Environment</em>
+        Sustains <em>Livelihood and Environment</em>
       </h1>
 
       <p class="hero-sub">
@@ -258,18 +258,69 @@
 
 
   <!--  
-       PARTNERS STRIP
+       PARTNERS CAROUSEL
+       Horizontal scroll showing 2 partners at a time, auto-scrolls
        -->
   <section class="partners">
     <div class="partners-inner">
       <p class="partners-label">Our Partners & Supporters</p>
-      <div class="partners-row">
-        <!-- TODO: Replace each slot with real partner logo <img> -->
-        <div class="partner-slot">Partner Logo</div>
-        <div class="partner-slot">Partner Logo</div>
-        <div class="partner-slot">Partner Logo</div>
-        <div class="partner-slot">Partner Logo</div>
-        <div class="partner-slot">Partner Logo</div>
+      <div class="partners-carousel" id="partnersCarousel">
+        <div class="partners-scroll" id="partnersScroll">
+          <!-- 11 Partners -->
+          <div class="partner-card">
+            <img src="../resources/images/Malawi-emblem.jpg" alt="Ministry of Industrialization" class="partner-logo"/>
+            <p class="partner-name">Ministry of Industrialization, Business, Trade & Tourism</p>
+          </div>
+          <div class="partner-card">
+            <p class="partner-name-text">FAAD</p>
+            <p class="partner-note">(Forum for Apicultural and Agricultural Development)</p>
+          </div>
+          <div class="partner-card">
+            <img src="../resources/images/mafeco.webp" alt="MAFECO" class="partner-logo"/>
+            <p class="partner-name">Malawi Federation of Cooperatives Union</p>
+          </div>
+          <div class="partner-card">
+            <img src="../resources/images/mbpa-logo.jpg" alt="MBPA" class="partner-logo"/>
+            <p class="partner-name">Malawi Bee Products Association</p>
+          </div>
+          <div class="partner-card">
+            <img src="../resources/images/bfd.jpg" alt="Bees for Development" class="partner-logo"/>
+            <p class="partner-name">Bees for Development</p>
+          </div>
+          <div class="partner-card">
+            <img src="../resources/images/Malawi-emblem.jpg" alt="Ministry of Agriculture" class="partner-logo"/>
+            <p class="partner-name">Ministry of Agriculture and Water Development</p>
+          </div>
+          <div class="partner-card">
+            <img src="../resources/images/Malawi-emblem.jpg" alt="Department of Forestry" class="partner-logo"/>
+            <p class="partner-name">Department of Forestry and Natural Resources</p>
+          </div>
+          <div class="partner-card">
+            <img src="../resources/images/mitc.jpg" alt="MITC" class="partner-logo"/>
+            <p class="partner-name">Malawi Investment Trade Centre</p>
+          </div>
+          <div class="partner-card">
+            <img src="../resources/images/musme.jpg" alt="MUSME" class="partner-logo"/>
+            <p class="partner-name">Malawi Union of Small Medium Enterprises</p>
+          </div>
+          <div class="partner-card">
+            <img src="../resources/images/trade.jpg" alt="Trade Programme Project" class="partner-logo"/>
+            <p class="partner-name">Trade Programme Project</p>
+          </div>
+          <div class="partner-card">
+            <img src="../resources/images/fyf.jpg" alt="Find Your Feet" class="partner-logo"/>
+            <p class="partner-name">Find Your Feet</p>
+          </div>
+          <!-- Duplicates for seamless loop -->
+          <div class="partner-card">
+            <img src="../resources/images/Malawi-emblem.jpg" alt="Ministry of Industrialization" class="partner-logo"/>
+            <p class="partner-name">Ministry of Industrialization, Business, Trade & Tourism</p>
+          </div>
+          <div class="partner-card">
+            <p class="partner-name-text">FAAD</p>
+            <p class="partner-note">(Forum for Apicultural and Agricultural Development)</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
