@@ -6,14 +6,16 @@
    1.  Tokens & Reset
    2.  Navbar
    3.  Hero
-   4.  Mission Strip
-   5.  Benefits Cards
-   6.  Stats Bar
-   7.  News Section
-   8.  Partners Strip
-   9.  Footer
-   10. Utilities & Animations
-   11. Mobile Responsive
+   4.  Featured Image
+   5.  Gallery
+   6.  Mission Strip
+   7.  Benefits Cards
+   8.  Stats Bar
+   9.  News Section
+   10. Partners Strip
+   11. Footer
+   12. Utilities & Animations
+   13. Mobile Responsive
 */
 
 
@@ -160,33 +162,17 @@ nav {
 
 /* ─── 3. HERO ───────────────────────────────────── */
 .hero {
-  position: relative;
-  min-height: 92vh;
+  background: var(--black);
+  color: var(--white);
+  padding: 5rem 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(rgba(26,26,26,0.62), rgba(26,26,26,0.62)), url('../resources/images/hero-bg.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  overflow: hidden;
-}
-
-.hero-bg {
-  display: none;
-}
-
-.hero-bg::after {
-  display: none;
+  min-height: 500px;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 5rem 2rem;
-  width: 100%;
   max-width: 860px;
-  margin: 0 auto;
   text-align: center;
 }
 
@@ -247,6 +233,8 @@ nav {
   letter-spacing: 0.04em;
   padding: 0.9rem 2rem;
   border-radius: 3px;
+  border: none;
+  cursor: pointer;
   transition: background 0.2s, transform 0.15s;
 }
 
@@ -264,6 +252,7 @@ nav {
   padding: 0.9rem 2rem;
   border-radius: 3px;
   border: 1.5px solid rgba(255,255,255,0.45);
+  cursor: pointer;
   transition: border-color 0.2s, background 0.2s;
 }
 
@@ -272,36 +261,147 @@ nav {
   background: rgba(255,255,255,0.08);
 }
 
-.hero-scroll-hint {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
+
+/* ─── 4. FEATURED IMAGE ─────────────────────────── */
+.featured-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.featured-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.featured-caption {
+  background: var(--white);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+
+/* ─── 5. GALLERY ────────────────────────────────── */
+.gallery {
+  background: var(--white);
+  padding: 4rem 2rem;
+}
+
+.gallery-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gallery-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.gallery-carousel {
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
-  color: rgba(255,255,255,0.35);
-  font-size: 0.55rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  gap: 1rem;
 }
 
-.scroll-line {
-  width: 1px;
-  height: 36px;
-  background: linear-gradient(to bottom, var(--gold), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
+.gallery-scroll {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  flex: 1;
+  padding: 0.5rem 0;
+  scrollbar-width: none;
 }
 
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; }
-  50%       { opacity: 1; }
+.gallery-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-card {
+  flex: 0 0 300px;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.gallery-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+  overflow: hidden;
+  background: var(--gray);
+}
+
+.gallery-image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-card:hover .gallery-image-wrapper img {
+  transform: scale(1.04);
+}
+
+.gallery-card-caption {
+  background: var(--cream);
+  padding: 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--black);
+  text-align: center;
+}
+
+.gallery-arrow {
+  flex: 0 0 auto;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.gallery-arrow:hover {
+  background: var(--gold);
+  transform: scale(1.08);
+}
+
+.gallery-arrow-left {
+  order: -1;
+}
+
+.gallery-arrow-right {
+  order: 1;
 }
 
 
-/* ─── 4. MISSION STRIP ──────────────────────────── */
+/* ─── 6. MISSION STRIP ──────────────────────────── */
 .mission {
   background: var(--white);
   padding: 5rem;
@@ -350,7 +450,7 @@ nav {
 }
 
 
-/* ─── 5. BENEFITS CARDS ─────────────────────────── */
+/* ─── 7. BENEFITS CARDS ─────────────────────────── */
 .benefits {
   background: var(--honey);
   padding: 5rem;
@@ -416,7 +516,7 @@ nav {
 }
 
 
-/* ─── 6. STATS BAR ──────────────────────────────── */
+/* ─── 8. STATS BAR ──────────────────────────────── */
 .stats {
   background: var(--black);
   padding: 3.5rem 5rem;
@@ -454,7 +554,7 @@ nav {
 }
 
 
-/* ─── 7. NEWS SECTION ───────────────────────────── */
+/* ─── 9. NEWS SECTION ───────────────────────────── */
 .news {
   background: var(--cream);
   padding: 5rem;
@@ -486,7 +586,9 @@ nav {
   white-space: nowrap;
 }
 
-.link-arrow:hover { opacity: 0.7; }
+.link-arrow:hover {
+  opacity: 0.7;
+}
 
 .news-grid {
   display: grid;
@@ -509,6 +611,7 @@ nav {
 .news-img {
   height: 200px;
   overflow: hidden;
+  background: var(--gray);
 }
 
 .news-img img {
@@ -520,18 +623,6 @@ nav {
 
 .news-card:hover .news-img img {
   transform: scale(1.04);
-}
-
-.news-img-placeholder {
-  width: 100%;
-  height: 100%;
-  background: var(--gray);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
 }
 
 .news-body {
@@ -570,7 +661,7 @@ nav {
 }
 
 
-/* ─── 8. PARTNERS CAROUSEL ──────────────────────── */
+/* ─── 10. PARTNERS CAROUSEL ─────────────────────── */
 .partners {
   background: var(--white);
   padding: 3.5rem 5rem;
@@ -660,7 +751,7 @@ nav {
 }
 
 
-/* ─── 9. FOOTER ─────────────────────────────────── */
+/* ─── 11. FOOTER ────────────────────────────────── */
 footer {
   background: var(--black);
   padding: 4rem 5rem 2.5rem;
@@ -737,7 +828,7 @@ footer {
 }
 
 
-/* ─── 10. UTILITIES & ANIMATIONS ────────────────── */
+/* ─── 12. UTILITIES & ANIMATIONS ────────────────── */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -755,75 +846,200 @@ footer {
     transform: none;
     transition: none;
   }
-  .scroll-line { animation: none; }
 }
 
 
-/* ─── 11. MOBILE RESPONSIVE ─────────────────────── */
+/* ─── 13. MOBILE RESPONSIVE ─────────────────────── */
 
 @media (max-width: 1024px) {
-  .nav-brand-text span { display: none; }
+  .nav-brand-text span {
+    display: none;
+  }
 }
 
 @media (max-width: 900px) {
-  nav { padding: 0.75rem 1.25rem; }
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-
-  .cards-grid { grid-template-columns: 1fr 1fr; }
-  .news-grid { grid-template-columns: 1fr 1fr; }
-
-  .hero-bg {
-    background-position: center center;
+  nav {
+    padding: 0.75rem 1.25rem;
   }
 
-  .hero-content {
-    padding: 4rem 1.5rem;
-    max-width: 100%;
+  .nav-links {
+    display: none;
   }
 
-  .mission { padding: 3rem 1.5rem; }
+  .hamburger {
+    display: flex;
+  }
+
+  .hero {
+    padding: 3rem 1.5rem;
+    min-height: auto;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .news-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .mission {
+    padding: 3rem 1.5rem;
+  }
+
   .mission-inner {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     text-align: center;
   }
-  .mission-logo { margin: 0 auto; }
-  .mission-text { max-width: 100%; }
 
-  .benefits { padding: 3rem 1.5rem; }
+  .mission-logo {
+    margin: 0 auto;
+  }
 
-  .stats { padding: 2.5rem 1.5rem; }
-  .stats-inner { justify-content: center; gap: 2.5rem; }
+  .mission-text {
+    max-width: 100%;
+  }
 
-  .news { padding: 3rem 1.5rem; }
-  .news-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
-
-  .partners { padding: 2.5rem 1.5rem; }
-  .partners-row { gap: 1.5rem; }
-
-  footer { padding: 3rem 1.5rem 2rem; }
-  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-}
-
-@media (max-width: 600px) {
-  .cards-grid { grid-template-columns: 1fr; }
-  .news-grid { grid-template-columns: 1fr; }
-
-  .hero {
-    min-height: auto;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
+  .benefits {
     padding: 3rem 1.5rem;
   }
 
-  .hero-content {
-    padding: 1rem 0;
+  .gallery {
+    padding: 3rem 1.5rem;
   }
 
-  .hero-scroll-hint {
-    display: none;
+  .stats {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .stats-inner {
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .news {
+    padding: 3rem 1.5rem;
+  }
+
+  .partners {
+    padding: 2.5rem 1.5rem;
+  }
+
+  footer {
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-carousel {
+    gap: 0.5rem;
+  }
+
+  .gallery-card {
+    flex: 0 0 240px;
+  }
+
+  .gallery-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .hero {
+    padding: 2.5rem 1rem;
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-sub {
+    font-size: 0.8rem;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-title {
+    font-size: 1.4rem;
+  }
+
+  .featured-caption {
+    font-size: 0.75rem;
+    padding: 1rem;
+  }
+
+  .mission-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .mission-heading {
+    font-size: 1.4rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .card-number {
+    font-size: 2rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .partners-scroll {
+    gap: 1rem;
   }
 }

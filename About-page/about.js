@@ -18,15 +18,25 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+
 /*
-  Hamburger menu toggle
+  Hamburger menu toggle with auto-close on link click
 */
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('nav-open');
-});
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('nav-open');
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('nav-open');
+    });
+  });
+}
+
 
 /*
   Gallery modal — click thumbnail to view full image
@@ -36,57 +46,49 @@ const imageModal = document.getElementById('imageModal');
 const modalImage = document.getElementById('modalImage');
 const modalClose = document.querySelector('.modal-close');
 
-galleryThumbnails.forEach(thumb => {
-  thumb.addEventListener('click', () => {
-    modalImage.src = thumb.src;
-    imageModal.classList.add('show');
-    document.body.style.overflow = 'hidden';
+if (galleryThumbnails.length > 0 && imageModal && modalImage && modalClose) {
+  galleryThumbnails.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      modalImage.src = thumb.src;
+      imageModal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    });
   });
-});
 
-modalClose.addEventListener('click', () => {
-  imageModal.classList.remove('show');
-  document.body.style.overflow = 'auto';
-});
-
-imageModal.addEventListener('click', (e) => {
-  if (e.target === imageModal) {
+  modalClose.addEventListener('click', () => {
     imageModal.classList.remove('show');
     document.body.style.overflow = 'auto';
-  }
-});
+  });
+
+  imageModal.addEventListener('click', (e) => {
+    if (e.target === imageModal) {
+      imageModal.classList.remove('show');
+      document.body.style.overflow = 'auto';
+    }
+  });
+}
+
 
 /*
-  Partners carousel auto-scroll pause/resume on scroll
-  Pauses when user manually scrolls, resumes when they click elsewhere
+  Partners carousel pause/resume on hover or focus
 */
 const partnersCarousel = document.getElementById('partnersCarousel');
 const partnersScroll = document.getElementById('partnersScroll');
 
 if (partnersCarousel && partnersScroll) {
-  let isScrolling = false;
-
-  // Detect manual scroll
-  partnersScroll.addEventListener('scroll', () => {
-    if (!isScrolling) {
-      partnersScroll.style.animationPlayState = 'paused';
-      isScrolling = true;
-    }
+  partnersCarousel.addEventListener('mouseenter', () => {
+    partnersScroll.style.animationPlayState = 'paused';
   });
 
-  // Resume when user clicks elsewhere on the page
-  document.addEventListener('click', (e) => {
-    if (isScrolling && !partnersCarousel.contains(e.target)) {
-      partnersScroll.style.animationPlayState = 'running';
-      isScrolling = false;
-    }
+  partnersCarousel.addEventListener('mouseleave', () => {
+    partnersScroll.style.animationPlayState = 'running';
   });
 
-  // Also resume if they click inside carousel (but not scroll)
-  partnersCarousel.addEventListener('click', () => {
-    if (isScrolling) {
-      partnersScroll.style.animationPlayState = 'running';
-      isScrolling = false;
-    }
+  partnersCarousel.addEventListener('focusin', () => {
+    partnersScroll.style.animationPlayState = 'paused';
+  });
+
+  partnersCarousel.addEventListener('focusout', () => {
+    partnersScroll.style.animationPlayState = 'running';
   });
 }

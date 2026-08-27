@@ -6,15 +6,9 @@
   <meta name="description" content="Honey Producers and Processors Cooperative Union of Malawi — connecting beekeepers to markets, training, and fair prices."/>
   <title>HOPAPCU - Honey Producers & Processors Cooperative Union of Malawi</title>
 
-<!-- logo -->
- <link rel="shortcut icon" href="../resources/images/logo.jpeg" type="image/x-icon">
- <!-- css -->
+  <link rel="shortcut icon" href="../resources/images/logo.jpeg" type="image/x-icon">
   <link rel="stylesheet" href="./homepage.css">
 
-  <!-- javascript -->
-
-
-  <!-- Google Fonts: Cormorant Garamond (display) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
@@ -22,10 +16,7 @@
 </head>
 <body>
 
-  <!-- NAVBAR
-       Sticky black bar. Logo image + org name left.
-       7 page links right. Hamburger on mobile.
- -->
+  <!-- NAVBAR -->
   <nav>
     <a href="index.html" class="nav-brand">
       <img src="../resources/images/logo.jpeg" alt="HOPAPCU Logo"/>
@@ -51,48 +42,70 @@
   </nav>
 
 
-  <!-- 
-       HERO
-       Split layout: dark text box left (45%) with diagonal edge,
-       beekeeping image right (55%) bleeds behind.
-  -->
+  <!-- HERO: Solid charcoal background, text only -->
   <section class="hero">
-    <div class="hero-image"></div>
-
-    <div class="hero-overlay"></div>
-
     <div class="hero-content">
       <p class="hero-eyebrow">Malawi's Beekeeping Cooperative Union</p>
-
-      <h1 class="hero-title">
-        Where Beekeeping<br/>
-        Sustains <em>Livelihood and Environment</em>
-      </h1>
-
+      <h1 class="hero-title">Where Beekeeping Sustains Livelihood and Environment</h1>
       <p class="hero-sub">
         HOPAPCU connects honey producers and processors across Malawi
         to reliable markets, fair prices, and a community built on
         sustainable beekeeping.
       </p>
-
       <div class="hero-ctas">
-        <a href="membership.html" class="btn-primary">Join the Cooperative</a>
-        <a href="marketplace.html" class="btn-outline">Visit Marketplace</a>
+        <a href="membership.html" class="btn-primary">Join Now</a>
+        <a href="../About-page/about.html" class="btn-outline">Learn More</a>
       </div>
-    </div>
-
-    <!-- Animated scroll indicator -->
-    <div class="hero-scroll-hint">
-      <div class="scroll-line"></div>
-      Scroll
     </div>
   </section>
 
 
-  <!--  
-       MISSION STRIP
-       Who we are + mission statement right.
-    -->
+  <!-- FEATURED IMAGE: Full-width beekeeping photo -->
+  <section class="featured-image">
+    <img src="../resources/images/beekeeping3.jpg" alt="Beekeepers working in apiary"/>
+    <p class="featured-caption">Beekeepers working with honey frames in the apiary</p>
+  </section>
+
+
+  <!-- GALLERY CAROUSEL: Horizontal scroll with arrow controls -->
+  <section class="gallery">
+    <div class="gallery-inner">
+      <h2 class="gallery-title fade-in">Featured Photos</h2>
+      <div class="gallery-carousel">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">←</button>
+        <div class="gallery-scroll" id="galleryScroll">
+          <div class="gallery-card">
+            <div class="gallery-image-wrapper">
+              <img src="../resources/images/beekeeping3.jpg" alt="Sustainable Beekeeping"/>
+            </div>
+            <p class="gallery-card-caption">Sustainable Beekeeping Practices</p>
+          </div>
+          <div class="gallery-card">
+            <div class="gallery-image-wrapper">
+              <img src="../resources/images/Ambasssador meeting.jpeg" alt="Members and Leadership"/>
+            </div>
+            <p class="gallery-card-caption">Members & Leadership</p>
+          </div>
+          <div class="gallery-card">
+            <div class="gallery-image-wrapper">
+              <img src="../resources/images/Ambasssador meeting.jpeg" alt="Community"/>
+            </div>
+            <p class="gallery-card-caption">Building Community</p>
+          </div>
+          <div class="gallery-card">
+            <div class="gallery-image-wrapper">
+              <img src="../resources/images/beekeeping3.jpg" alt="Impact"/>
+            </div>
+            <p class="gallery-card-caption">Community Impact</p>
+          </div>
+        </div>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">→</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- MISSION STRIP -->
   <section class="mission">
     <div class="mission-inner fade-in">
       <img
@@ -116,10 +129,7 @@
   </section>
 
 
-  <!--  
-       BENEFITS CARDS
-       3 cards on honey-yellow background.
--->
+  <!-- BENEFITS CARDS -->
   <section class="benefits">
     <div class="benefits-inner">
       <p class="section-label">Why Join HOPAPCU</p>
@@ -142,6 +152,7 @@
           <p class="card-text">
             Members receive practical skills training, access to modern
             beekeeping equipment, and tools through grants.
+          </p>
         </div>
 
         <div class="card fade-in">
@@ -158,25 +169,22 @@
   </section>
 
 
-  <!--  
-       STATS BAR
-       Black background.
--->
+  <!-- STATS BAR -->
   <section class="stats">
     <div class="stats-inner">
 
       <div class="stat fade-in">
-        <div class="stat-number">xxx</div>
+        <div class="stat-number">150+</div>
         <div class="stat-label">Active Members</div>
       </div>
 
       <div class="stat fade-in">
-        <div class="stat-number">xxx</div>
+        <div class="stat-number">8</div>
         <div class="stat-label">Districts Covered</div>
       </div>
 
       <div class="stat fade-in">
-        <div class="stat-number">xxx</div>
+        <div class="stat-number">15+</div>
         <div class="stat-label">Partner Organisations</div>
       </div>
 
@@ -184,10 +192,7 @@
   </section>
 
 
-  <!--  
-       NEWS & ACTIVITIES PREVIEW
-       3 news cards with.
- -->
+  <!-- NEWS & ACTIVITIES -->
   <section class="news">
     <div class="news-inner">
 
@@ -201,11 +206,9 @@
 
       <div class="news-grid">
 
-        <!-- Card 1: Temporary-->
         <article class="news-card fade-in">
           <div class="news-img">
-            <img src="../resources/images/Ambasssador meeting.jpeg" alt="">
-            <div class="news-img-placeholder">Sample news here</div>
+            <img src="../resources/images/Ambasssador meeting.jpeg" alt="International Partners Meeting"/>
           </div>
           <div class="news-body">
             <p class="news-date">August 2026</p>
@@ -218,11 +221,9 @@
           </div>
         </article>
 
-        <!-- Card 2: Training/meeting session -->
         <article class="news-card fade-in">
           <div class="news-img">
-            <img src="../resources/images/training.jpeg" alt="">
-            <div class="news-img-placeholder">Sample news here</div>
+            <img src="../resources/images/Ambasssador meeting.jpeg" alt="Training Programme"/>
           </div>
           <div class="news-body">
             <p class="news-date">August 2026</p>
@@ -235,11 +236,9 @@
           </div>
         </article>
 
-        <!-- Card 3: Group/community meeting -->
         <article class="news-card fade-in">
           <div class="news-img">
-            <img src="../resources/images/in-door-meeting.jpeg" alt="">
-            <div class="news-img-placeholder">Photo — General Meeting</div>
+            <img src="../resources/images/Ambasssador meeting.jpeg" alt="General Meeting"/>
           </div>
           <div class="news-body">
             <p class="news-date">July 2026</p>
@@ -257,68 +256,64 @@
   </section>
 
 
-  <!--  
-       PARTNERS CAROUSEL
-       Horizontal scroll showing 2 partners at a time, auto-scrolls
-       -->
+  <!-- PARTNERS CAROUSEL -->
   <section class="partners">
     <div class="partners-inner">
       <p class="partners-label">Our Partners & Supporters</p>
       <div class="partners-carousel" id="partnersCarousel">
         <div class="partners-scroll" id="partnersScroll">
-          <!-- 11 Partners -->
           <div class="partner-card">
             <img src="../resources/images/Malawi-emblem.jpg" alt="Ministry of Industrialization" class="partner-logo"/>
-            <p class="partner-name">Ministry of Industrialization, Business, Trade & Tourism</p>
+            <p class="partner-name">Ministry of Industrialization</p>
           </div>
           <div class="partner-card">
             <p class="partner-name-text">FAAD</p>
-            <p class="partner-note">(Forum for Apicultural and Agricultural Development)</p>
+            <p class="partner-note">(Forum for Apicultural Development)</p>
           </div>
           <div class="partner-card">
             <img src="../resources/images/mafeco.webp" alt="MAFECO" class="partner-logo"/>
-            <p class="partner-name">Malawi Federation of Cooperatives Union</p>
+            <p class="partner-name">Malawi Federation of Cooperatives</p>
           </div>
           <div class="partner-card">
             <img src="../resources/images/mbpa-logo.jpg" alt="MBPA" class="partner-logo"/>
-            <p class="partner-name">Malawi Bee Products Association</p>
+            <p class="partner-name">Bee Products Association</p>
           </div>
           <div class="partner-card">
-            <img src="../resources/images/bfd.jpg" alt="Bees for Development" class="partner-logo"/>
+            <img src="../resources/images/bfd.jpg" alt="BfD" class="partner-logo"/>
             <p class="partner-name">Bees for Development</p>
           </div>
           <div class="partner-card">
             <img src="../resources/images/Malawi-emblem.jpg" alt="Ministry of Agriculture" class="partner-logo"/>
-            <p class="partner-name">Ministry of Agriculture and Water Development</p>
+            <p class="partner-name">Ministry of Agriculture</p>
           </div>
           <div class="partner-card">
             <img src="../resources/images/Malawi-emblem.jpg" alt="Department of Forestry" class="partner-logo"/>
-            <p class="partner-name">Department of Forestry and Natural Resources</p>
+            <p class="partner-name">Department of Forestry</p>
           </div>
           <div class="partner-card">
             <img src="../resources/images/mitc.jpg" alt="MITC" class="partner-logo"/>
-            <p class="partner-name">Malawi Investment Trade Centre</p>
+            <p class="partner-name">Investment Trade Centre</p>
           </div>
           <div class="partner-card">
             <img src="../resources/images/musme.jpg" alt="MUSME" class="partner-logo"/>
-            <p class="partner-name">Malawi Union of Small Medium Enterprises</p>
+            <p class="partner-name">Union of Small Enterprises</p>
           </div>
           <div class="partner-card">
-            <img src="../resources/images/trade.jpg" alt="Trade Programme Project" class="partner-logo"/>
+            <img src="../resources/images/trade.jpg" alt="Trade Programme" class="partner-logo"/>
             <p class="partner-name">Trade Programme Project</p>
           </div>
           <div class="partner-card">
-            <img src="../resources/images/fyf.jpg" alt="Find Your Feet" class="partner-logo"/>
+            <img src="../resources/images/fyf.jpg" alt="FYF" class="partner-logo"/>
             <p class="partner-name">Find Your Feet</p>
           </div>
           <!-- Duplicates for seamless loop -->
           <div class="partner-card">
             <img src="../resources/images/Malawi-emblem.jpg" alt="Ministry of Industrialization" class="partner-logo"/>
-            <p class="partner-name">Ministry of Industrialization, Business, Trade & Tourism</p>
+            <p class="partner-name">Ministry of Industrialization</p>
           </div>
           <div class="partner-card">
             <p class="partner-name-text">FAAD</p>
-            <p class="partner-note">(Forum for Apicultural and Agricultural Development)</p>
+            <p class="partner-note">(Forum for Apicultural Development)</p>
           </div>
         </div>
       </div>
@@ -326,41 +321,32 @@
   </section>
 
 
-  <!--  
-       FOOTER
-       Black. 3 columns: brand | links | contact.
-       Copyright at bottom.
- -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div class="footer-grid">
-
-        <!-- Column 1: Brand -->
         <div class="footer-brand">
           <img src="../resources/images/logo.jpeg" alt="HOPAPCU Logo"/>
           <p class="footer-brand-name">HOPAPCU</p>
           <p class="footer-brand-text">
             Honey Producers & Processors Cooperative Union of Malawi.
-            Building better livelihoods through sustainable beekeeping
-            and the strength of cooperative enterprise.
+            Building better livelihoods through sustainable beekeeping.
           </p>
         </div>
 
-        <!-- Column 2: Quick links -->
         <div class="footer-col">
           <h4>Quick Links</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <li><a href="../About-page/about.html">About Us</a></li>
             <li><a href="programmes.html">Programmes</a></li>
             <li><a href="membership.html">Membership</a></li>
             <li><a href="marketplace.html">Marketplace</a></li>
-            <li><a href="news.html">News & Activities</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
 
-        <!-- Column 3: Contact info -->
         <div class="footer-col">
           <h4>Contact Us</h4>
           <ul>
@@ -368,20 +354,17 @@
             <li>Mkondezi, Nkhata-Bay</li>
             <li><a href="tel:+265996641603">+265 996 641 603</a></li>
             <li><a href="tel:+265883159162">+265 883 159 162</a></li>
-            <!-- TODO: Add real email once confirmed -->
             <li><a href="mailto:info@hopapcu.mw">info@hopapcu.mw</a></li>
           </ul>
         </div>
-
       </div>
 
       <div class="footer-bottom">
-        © 2026 HOPAPCU - Honey Producers & Processors Cooperative Union of Malawi.
-        All rights reserved.
+        © 2026 HOPAPCU - All rights reserved.
       </div>
     </div>
   </footer>
 
-    <script src="./homepage.js"></script>
+  <script src="./homepage.js"></script>
 </body>
 </html>
