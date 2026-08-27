@@ -1,0 +1,48 @@
+## **HOPAPCU WEBSITE IMPLEMENTATION**
+
+1. **PAGES**
+   1. **Homepage**
+
+* The first page every visitor sees. It will have your group photo as the main image, a short introduction to HOPAPCU, three key benefits of joining or working with you, key statistics (members, districts, year founded), recent news preview, and a strip showing your partners. Two main buttons: Join the Cooperative and Visit Marketplace.
+* Font: 11, color:
+  1. **About**
+* Bwana Harawa Proposed:
+
+1. Identity / structure
+2. Vision, mission and values
+3. Cooperative principles
+4. Organisation structure
+5. Governance structure
+6. Board of Directors
+7. Executive management
+8. Secretariate
+9. Strategic plan 2026-2030
+10. Service Charter
+11. Annual reports
+12. Transparency and Accountability
+
+So I organized into three sections visitors can navigate:
+
+* **Who We Are**: your identity, vision, mission, values, and cooperative principles
+* **Leadership**: governance structure, board of directors, executive management, and secretariat
+* **Accountability**: service charter, annual reports, transparency statement, and partner affiliations
+
+This will need:
+
+1. Board member Photos , names and titles
+2. Your strategic plan
+3. [artners and affiliations
+4. Cooperative principles
+   1. Programmes
+
+* Showcases what HOPAPCU actually does on the ground — activities, projects, initiatives, and your strategic plan for 2026 to 2030. This is where donors and government partners will look to understand your impact.
+  1. Membership
+* Explains how to join, membership types and fees, benefits of being a member, and shareholder information. Clear step-by-step process so anyone can understand how to become part of HOPAPCU.
+  1. News and activities
+* All your events, meetings, ambassador visits, training sessions, and photos in one place. This keeps the site feeling active and current.
+  1. Marketplace
+* Where visitors can see your honey products and contact you to buy. Simple product showcase with photos, descriptions, and a contact-to-order button. No online payment system at this stage.
+  1. CONTACT
+* Address, phone numbers, email, contact form, and map showing your location in Nkhata-Bay
+
+1. **DEPLOYMENT**

@@ -162,7 +162,7 @@ nav {
 
 /* ─── 3. HERO ───────────────────────────────────── */
 .hero {
-  background: var(--black);
+  background: #2d5016;
   color: var(--white);
   padding: 5rem 2rem;
   display: flex;
@@ -201,8 +201,9 @@ nav {
   font-size: clamp(2.2rem, 5.5vw, 4rem);
   font-weight: 700;
   color: var(--white);
-  line-height: 1.1;
+  line-height: 1.15;
   margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
 }
 
 .hero-title em {
@@ -211,11 +212,12 @@ nav {
 }
 
 .hero-sub {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.75);
-  line-height: 1.75;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
   max-width: 520px;
   margin: 0 auto 2.5rem;
+  font-weight: 400;
 }
 
 .hero-ctas {
@@ -227,15 +229,16 @@ nav {
 
 .btn-primary {
   background: var(--honey);
-  color: var(--black);
+  color: #2d5016;
   font-weight: 700;
   font-size: 0.8rem;
   letter-spacing: 0.04em;
-  padding: 0.9rem 2rem;
+  padding: 0.95rem 2rem;
   border-radius: 3px;
   border: none;
   cursor: pointer;
   transition: background 0.2s, transform 0.15s;
+  font-family: var(--font-body);
 }
 
 .btn-primary:hover {
@@ -249,16 +252,17 @@ nav {
   font-weight: 600;
   font-size: 0.8rem;
   letter-spacing: 0.04em;
-  padding: 0.9rem 2rem;
+  padding: 0.95rem 2rem;
   border-radius: 3px;
-  border: 1.5px solid rgba(255,255,255,0.45);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s;
+  font-family: var(--font-body);
 }
 
 .btn-outline:hover {
   border-color: var(--white);
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 
@@ -661,7 +665,62 @@ nav {
 }
 
 
-/* ─── 10. PARTNERS CAROUSEL ─────────────────────── */
+/* ─── 10. MAP SECTION ───────────────────────────── */
+
+.map-section {
+  background: var(--white);
+  padding: 5rem;
+  border-top: 1px solid var(--gray);
+}
+
+.map-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.map-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+}
+
+.map-address {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.map-contact {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.map-contact p {
+  margin-bottom: 0.75rem;
+}
+
+.map-placeholder {
+  background: var(--gray);
+  border-radius: 4px;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border: 1px solid #ddd;
+}
+
+
+/* ─── 11. PARTNERS CAROUSEL ─────────────────────── */
 .partners {
   background: var(--white);
   padding: 3.5rem 5rem;
@@ -873,6 +932,11 @@ footer {
   .hero {
     padding: 3rem 1.5rem;
     min-height: auto;
+  }
+
+  .map-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .cards-grid {

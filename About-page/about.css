@@ -232,7 +232,7 @@ footer {
 /* ─── 3. PAGE HEADER ────────────────────────────── */
 
 .page-header {
-  background: var(--black);
+  background: #2d5016;
   color: var(--white);
   min-height: 500px;
   display: flex;
@@ -254,14 +254,16 @@ footer {
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--honey);
-  line-height: 1.1;
+  color: var(--white);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .page-header p {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.6;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  font-weight: 400;
 }
 
 .page-header-image {
@@ -636,6 +638,54 @@ footer {
   color: var(--gold);
   font-weight: 600;
   letter-spacing: 0.04em;
+}
+
+
+/* ─── 5B. LOCATION & MAP ────────────────────────── */
+
+.location-info {
+  margin-top: 4rem;
+  padding: 3rem 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.location-text {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 800px;
+}
+
+.map-placeholder-about {
+  background: var(--gray);
+  border-radius: 4px;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border: 1px solid #ddd;
+  margin-bottom: 2rem;
+}
+
+.location-details {
+  background: var(--cream);
+  padding: 2rem;
+  border-left: 4px solid var(--gold);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.location-details p {
+  margin-bottom: 0.75rem;
+}
+
+.location-details p:last-child {
+  margin-bottom: 0;
 }
 
 
@@ -1017,8 +1067,13 @@ footer {
   .vm-box,
   .membership-info,
   .governance-overview,
-  .partners-accountability {
+  .partners-accountability,
+  .location-details {
     padding: 1.5rem;
+  }
+
+  .map-placeholder-about {
+    min-height: 280px;
   }
 
   .subsection-title {
