@@ -9,6 +9,10 @@
   <link rel="shortcut icon" href="../resources/images/logo.jpeg" type="image/x-icon">
   <link rel="stylesheet" href="./homepage.css">
 
+  <!-- Leaflet Map Library (for interactive maps) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
@@ -30,7 +34,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="../About-page/about.html">About</a></li>
       <li><a href="programmes.html">Programmes</a></li>
-      <li><a href="../membership-page/membership.html">Membership</a></li>
+      <li><a href="membership.html">Membership</a></li>
       <li><a href="marketplace.html">Marketplace</a></li>
       <li><a href="news.html">News</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -44,6 +48,9 @@
 
   <!-- HERO: Solid charcoal background, text only -->
   <section class="hero">
+    <div class="hero-image">
+      <img src="../resources/images/beekeeping3.jpg" alt="Beekeepers working in the apiary"/>
+    </div>
     <div class="hero-content">
       <p class="hero-eyebrow">Malawi's Beekeeping Cooperative Union</p>
       <h1 class="hero-title">Where Beekeeping Sustains Livelihood and Environment</h1>
@@ -57,13 +64,6 @@
         <a href="../About-page/about.html" class="btn-outline">Learn More</a>
       </div>
     </div>
-  </section>
-
-
-  <!-- FEATURED IMAGE: Full-width beekeeping photo -->
-  <section class="featured-image">
-    <img src="../resources/images/beekeeping3.jpg" alt="Beekeepers working in apiary"/>
-    <p class="featured-caption">Beekeepers working with honey frames in the apiary</p>
   </section>
 
 
@@ -335,9 +335,8 @@
           <p><strong>Email:</strong> info@hopapcu.mw</p>
         </div>
       </div>
-      <div class="map-placeholder" id="mapPlaceholder">
-        <p>Map will load here</p>
-      </div>
+      <!-- Map container: The map will appear here -->
+      <div class="map-container" id="mapContainer"></div>
     </div>
   </section>
 
@@ -386,9 +385,7 @@
     </div>
   </footer>
 
+  <script src="./map-homepage.js"></script>
   <script src="./homepage.js"></script>
 </body>
 </html>
-
-
-<!-- added map placeholder -->
