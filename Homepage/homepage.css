@@ -87,7 +87,7 @@ nav {
   height: 44px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--gold);
+  /* border: 2px solid var(--gold);x */
 }
 
 .nav-brand-text {
