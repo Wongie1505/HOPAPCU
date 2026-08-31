@@ -1,9 +1,9 @@
 /*
-  HOPAPCU WEBSITE — MEMBERSHIP PAGE STYLESHEET
-  File: Membership/membership.css
+  HOPAPCU WEBSITE — PROGRAMMES PAGE STYLESHEET
+  File: Programmes/programmes.css
 */
 
-/* ─── TOKENS & RESET ─────────────────────────── */
+/* ─── TOKENS & RESET ─────────────────────── */
 :root {
   --gold:         #C9A800;
   --honey:        #F5C400;
@@ -12,6 +12,7 @@
   --white:        #FFFFFF;
   --gray:         #F0EDE6;
   --muted:        #666666;
+  --green:        #2d5016;
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body:    'DM Sans', Arial, sans-serif;
 }
@@ -146,7 +147,7 @@ nav {
 
 /* ─── PAGE HEADER ────────────────────────────── */
 .page-header {
-  background: #476434;
+  background: var(--green);
   color: var(--white);
   min-height: 500px;
   display: flex;
@@ -238,7 +239,7 @@ nav {
   .page-header-image {
     position: static;
     width: 100%;
-    height: 440px;
+    height: 240px;
     clip-path: none;
     margin-top: 2rem;
   }
@@ -249,6 +250,7 @@ nav {
 .section-inner {
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .section-title {
@@ -269,306 +271,255 @@ nav {
 }
 
 
-/* ─── HOW TO JOIN SECTION ───────────────────── */
-.section-how-to-join {
+/* ─── STRATEGIC PILLARS ─────────────────────── */
+.section-pillars {
   background: var(--white);
-  padding: 5rem;
+  padding: 5rem 5rem;
 }
 
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
-
-.step-card {
-  background: var(--cream);
-  padding: 2.5rem 2rem;
-  border-radius: 4px;
-  text-align: center;
-  border-top: 4px solid var(--honey);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.step-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-.step-number {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--honey);
-  line-height: 1;
-  margin-bottom: 1rem;
-}
-
-.step-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--black);
-  margin-bottom: 0.75rem;
-}
-
-.step-text {
-  font-size: 0.85rem;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-
-/* ─── MEMBERSHIP TYPES & FEES ───────────────── */
-.section-membership-types {
-  background: var(--cream);
-  padding: 5rem;
-}
-
-.table-wrapper {
-  overflow-x: auto;
-  margin-bottom: 2rem;
-}
-
-.membership-fees-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: var(--white);
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  font-size: 0.9rem;
-}
-
-.membership-fees-table thead {
-  background: var(--black);
-}
-
-.membership-fees-table th {
-  padding: 1.25rem;
-  text-align: left;
-  font-weight: 700;
-  color: var(--white);
-  letter-spacing: 0.02em;
-}
-
-.membership-fees-table td {
-  padding: 1.25rem;
-  border-bottom: 1px solid var(--gray);
-  color: var(--muted);
-}
-
-.membership-fees-table tbody tr:hover {
-  background: rgba(245, 196, 0, 0.04);
-}
-
-.membership-fees-table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-.table-note {
-  font-size: 0.85rem;
-  color: var(--muted);
-  font-style: italic;
-  line-height: 1.6;
-  max-width: 700px;
-}
-
-
-/* ─── BENEFITS SECTION ──────────────────────── */
-.section-benefits {
-  background: var(--white);
-  padding: 5rem;
-}
-
-.benefits-grid {
+.pillars-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-.benefit-card {
+.pillar-card {
   background: var(--cream);
   padding: 2.5rem 2rem;
   border-radius: 4px;
-  text-align: center;
-  border-left: 4px solid var(--gold);
+  border-top: 4px solid;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.benefit-card:hover {
+.pillar-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-.benefit-icon {
+.pillar-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.benefit-card h3 {
+.pillar-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 0.75rem;
+}
+
+.pillar-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+
+/* ─── ACTIVE INITIATIVES ────────────────────── */
+.section-initiatives {
+  background: var(--cream);
+  padding: 5rem 5rem;
+}
+
+.initiatives-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.initiative-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 4px;
+  border-left: 4px solid var(--gold);
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.initiative-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.initiative-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.initiative-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.2;
+}
+
+.initiative-status {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.4rem 0.75rem;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.status-active {
+  background: rgba(45, 80, 22, 0.1);
+  color: var(--green);
+}
+
+.status-upcoming {
+  background: rgba(201, 168, 0, 0.1);
+  color: var(--gold);
+}
+
+.initiative-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.initiative-details {
+  padding-top: 1rem;
+  border-top: 1px solid var(--gray);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.initiative-details p {
+  margin-bottom: 0.5rem;
+}
+
+.initiative-details p:last-child {
+  margin-bottom: 0;
+}
+
+.initiative-details strong {
+  color: var(--black);
+  font-weight: 600;
+}
+
+
+/* ─── HOW WE WORK SECTION ───────────────────── */
+.section-how-we-work {
+  background: var(--white);
+  padding: 5rem 5rem;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.process-card {
+  background: var(--cream);
+  padding: 2.5rem 2rem;
+  border-radius: 4px;
+  text-align: center;
+  border-top: 4px solid var(--gold);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.process-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.process-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.process-card h3 {
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--black);
   margin-bottom: 0.75rem;
 }
 
-.benefit-card p {
+.process-card p {
   font-size: 0.85rem;
   color: var(--muted);
   line-height: 1.7;
 }
 
 
-/* ─── SHAREHOLDERS SECTION ──────────────────── */
-.section-shareholders {
+/* ─── GET INVOLVED SECTION ──────────────────── */
+.section-get-involved {
   background: var(--cream);
-  padding: 5rem;
+  padding: 5rem 5rem;
 }
 
-.shareholding-grid {
+.involvement-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin-bottom: 3rem;
 }
 
-.shareholding-card {
+.involvement-card {
   background: var(--white);
-  padding: 2.5rem;
+  padding: 2.5rem 2rem;
   border-radius: 4px;
-  border-left: 4px solid var(--gold);
+  text-align: center;
+  border-top: 4px solid var(--gold);
   transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
 }
 
-.shareholding-card:hover {
+.involvement-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-.shareholding-card h3 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--black);
-  margin-bottom: 0.5rem;
-}
-
-.shareholding-limit {
-  font-size: 1.3rem;
-  font-family: var(--font-display);
-  font-weight: 700;
-  color: var(--honey);
+.involvement-icon {
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.shareholding-text {
+.involvement-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 0.75rem;
+}
+
+.involvement-card p {
   font-size: 0.85rem;
   color: var(--muted);
   line-height: 1.7;
-}
-
-.shareholding-info {
-  background: var(--white);
-  padding: 2.5rem;
-  border-radius: 4px;
-  border-top: 4px solid var(--honey);
-}
-
-.shareholding-info p {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--black);
   margin-bottom: 1.5rem;
+  flex-grow: 1;
 }
 
-.shareholding-info ul {
-  list-style: none;
-  padding: 0;
-}
-
-.shareholding-info li {
-  font-size: 0.85rem;
-  color: var(--muted);
-  padding-left: 1.5rem;
-  margin-bottom: 0.75rem;
-  position: relative;
-}
-
-.shareholding-info li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--gold);
+.btn-learn-more {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--black);
   font-weight: 700;
-}
-
-
-/* ─── CTA SECTION ───────────────────────────── */
-.section-cta {
-  background: var(--black);
-  color: var(--white);
-  padding: 5rem;
-  text-align: center;
-}
-
-.cta-title {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--honey);
-  margin-bottom: 1rem;
-}
-
-.cta-text {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.85);
-  line-height: 1.8;
-  max-width: 600px;
-  margin: 0 auto 2.5rem;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.btn-primary {
-  background: var(--honey);
-  color: #2d5016;
-  font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 0.04em;
-  padding: 0.95rem 2rem;
+  padding: 0.65rem 1.5rem;
   border-radius: 3px;
   border: none;
   cursor: pointer;
   transition: background 0.2s, transform 0.15s;
   font-family: var(--font-body);
+  text-transform: uppercase;
 }
 
-.btn-primary:hover {
-  background: var(--gold);
+.btn-learn-more:hover {
+  background: var(--honey);
   transform: translateY(-2px);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--white);
-  font-weight: 600;
-  font-size: 0.8rem;
-  letter-spacing: 0.04em;
-  padding: 0.95rem 2rem;
-  border-radius: 3px;
-  border: 1.5px solid rgba(255,255,255,0.5);
-  cursor: pointer;
-  transition: border-color 0.2s, background 0.2s;
-  font-family: var(--font-body);
-}
-
-.btn-outline:hover {
-  border-color: var(--white);
-  background: rgba(255,255,255,0.1);
 }
 
 
@@ -676,31 +627,31 @@ footer {
     padding: 0.75rem 1.25rem;
   }
 
-  .section-how-to-join,
-  .section-membership-types,
-  .section-benefits,
-  .section-shareholders,
-  .section-cta {
+  .section-pillars,
+  .section-initiatives,
+  .section-how-we-work,
+  .section-get-involved {
     padding: 3rem 1.5rem;
   }
 
-  .steps-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-
-  .benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-
-  .shareholding-grid {
+  .pillars-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-  footer {
-    padding: 3rem 1.5rem 2rem;
+  .initiatives-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .involvement-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .footer-grid {
@@ -720,25 +671,11 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .steps-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .btn-primary,
-  .btn-outline {
-    width: 100%;
-  }
-
   .section-title {
     font-size: 1.5rem;
+  }
+
+  .initiative-header {
+    flex-direction: column;
   }
 }
