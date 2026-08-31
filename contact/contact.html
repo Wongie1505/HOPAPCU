@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Contact HOPAPCU. Get in touch with Malawi's beekeeping cooperative."/>
+  <title>Contact - HOPAPCU</title>
+
+  <link rel="shortcut icon" href="../resources/images/logo.jpeg" type="image/x-icon">
+  <link rel="stylesheet" href="./contact.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="../Homepage/homepage.html" class="nav-brand">
+      <img src="../resources/images/logo.jpeg" alt="HOPAPCU Logo"/>
+      <div class="nav-brand-text">
+        HOPAPCU
+        <span>Honey Producers & Processors Cooperative Union</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="../Homepage/homepage.html">Home</a></li>
+      <li><a href="../About-page/about.html">About</a></li>
+      <li><a href="programmes.html">Programmes</a></li>
+      <li><a href="membership.html">Membership</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="../contact/contact.html">Contact</a></li>
+    </ul>
+
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+
+  <!-- PAGE HERO -->
+  <section class="page-header">
+    <div class="page-header-content">
+      <h1>Get in Touch</h1>
+      <p>Have questions? Want to join? Interested in partnering? We'd love to hear from you. Reach out using any method below.</p>
+    </div>
+    <div class="page-header-image">
+      <img src="../resources/images/contact-hero.jpg" alt="HOPAPCU office and team"/>
+    </div>
+  </section>
+
+
+  <!-- QUICK CONTACT INFO -->
+  <section class="section-quick-contact">
+    <div class="section-inner">
+      <div class="quick-contact-grid">
+        <div class="contact-card fade-in">
+          <div class="contact-icon">📍</div>
+          <h3>Our Location</h3>
+          <p>FAAD Malawi Building</p>
+          <p>Mkondezi, Nkhata-Bay</p>
+          <p>Malawi</p>
+        </div>
+
+        <div class="contact-card fade-in">
+          <div class="contact-icon">📞</div>
+          <h3>Phone</h3>
+          <p><a href="tel:+265996641603">+265 996 641 603</a></p>
+          <p><a href="tel:+265883159162">+265 883 159 162</a></p>
+          <p class="small-text">Mon-Fri, 8am-5pm CAT</p>
+        </div>
+
+        <div class="contact-card fade-in">
+          <div class="contact-icon">✉️</div>
+          <h3>Email</h3>
+          <p><a href="mailto:info@hopapcu.mw">info@hopapcu.mw</a></p>
+          <p class="small-text">We reply within 24 hours</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT FORM -->
+  <section class="section-contact-form">
+    <div class="section-inner">
+      <div class="form-container fade-in">
+        <div class="form-header">
+          <h2>Send us a Message</h2>
+          <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+        </div>
+
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required/>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required/>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone"/>
+          </div>
+
+          <div class="form-group">
+            <label for="inquiry-type">Type of Inquiry *</label>
+            <select id="inquiry-type" name="inquiry-type" required>
+              <option value="">-- Select an option --</option>
+              <option value="General question">General Question</option>
+              <option value="Membership inquiry">Membership Inquiry</option>
+              <option value="Marketplace/Products">Marketplace / Products</option>
+              <option value="Training/Programmes">Training / Programmes</option>
+              <option value="Partnership opportunity">Partnership Opportunity</option>
+              <option value="Technical support">Technical Support</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- MAP SECTION -->
+  <section class="section-map-contact">
+    <div class="section-inner">
+      <h2 class="section-title fade-in">Find Us on the Map</h2>
+      <p class="section-intro fade-in">
+        Visit our office in Nkhata-Bay to meet our team and learn more about HOPAPCU's work.
+      </p>
+
+      <div class="map-wrapper fade-in">
+        <div id="mapContainer"></div>
+        <div class="map-info">
+          <h3>HOPAPCU Office</h3>
+          <p><strong>Address:</strong> FAAD Malawi Building, Mkondezi, Nkhata-Bay</p>
+          <p><strong>Phone:</strong> <a href="tel:+265996641603">+265 996 641 603</a></p>
+          <p><strong>Hours:</strong> Monday - Friday, 8:00 AM - 5:00 PM CAT</p>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=-11.623556,33.245531" target="_blank" class="btn-get-directions">Get Directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ SECTION -->
+  <section class="section-faq">
+    <div class="section-inner">
+      <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+
+      <div class="faq-grid">
+        <div class="faq-item fade-in">
+          <h3 class="faq-question">What is HOPAPCU?</h3>
+          <p class="faq-answer">HOPAPCU is the Honey Producers & Processors Cooperative Union of Malawi. We bring together beekeeping cooperatives, groups, and individual beekeepers to strengthen production, access markets, and build sustainable livelihoods.</p>
+        </div>
+
+        <div class="faq-item fade-in">
+          <h3 class="faq-question">How do I join HOPAPCU?</h3>
+          <p class="faq-answer">Visit our <a href="membership.html">Membership page</a> to learn about membership types and fees. You can also contact us directly and we'll guide you through the registration process.</p>
+        </div>
+
+        <div class="faq-item fade-in">
+          <h3 class="faq-question">Do you offer training?</h3>
+          <p class="faq-answer">Yes! We run regular training programmes on beekeeping techniques, business management, and sustainable production. Contact us to ask about upcoming workshops in your district.</p>
+        </div>
+
+        <div class="faq-item fade-in">
+          <h3 class="faq-question">How can I buy HOPAPCU honey and products?</h3>
+          <p class="faq-answer">Visit our <a href="marketplace.html">Marketplace</a> to browse and order honey, beeswax, and beekeeping equipment directly from our members. We deliver across Malawi.</p>
+        </div>
+
+        <div class="faq-item fade-in">
+          <h3 class="faq-question">What are your response times?</h3>
+          <p class="faq-answer">We aim to reply to all emails within 24 business hours. For urgent matters, please call us directly.</p>
+        </div>
+
+        <div class="faq-item fade-in">
+          <h3 class="faq-question">Are you open to partnerships?</h3>
+          <p class="faq-answer">Yes! We welcome partnerships with NGOs, government agencies, and organizations supporting beekeeping development. Use the contact form to tell us about your interest.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <img src="../resources/images/logo.jpeg" alt="HOPAPCU Logo"/>
+          <p class="footer-brand-name">HOPAPCU</p>
+          <p class="footer-brand-text">
+            Honey Producers & Processors Cooperative Union of Malawi.
+            Building better livelihoods through sustainable beekeeping.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../Homepage/homepage.html">Home</a></li>
+            <li><a href="../About-page/about.html">About Us</a></li>
+            <li><a href="programmes.html">Programmes</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="news.html">News</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>FAAD Malawi Building</li>
+            <li>Mkondezi, Nkhata-Bay</li>
+            <li><a href="tel:+265996641603">+265 996 641 603</a></li>
+            <li><a href="tel:+265883159162">+265 883 159 162</a></li>
+            <li><a href="mailto:info@hopapcu.mw">info@hopapcu.mw</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 HOPAPCU - All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="./map-contact.js"></script>
+  <script src="./contact.js"></script>
+</body>
+</html>
