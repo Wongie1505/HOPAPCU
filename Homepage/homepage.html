@@ -9,9 +9,7 @@
   <link rel="shortcut icon" href="../resources/images/logo.jpeg" type="image/x-icon">
   <link rel="stylesheet" href="./homepage.css">
 
-  <!-- Leaflet Map Library (for interactive maps) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -23,21 +21,21 @@
   <!-- NAVBAR -->
   <nav>
     <a href="index.html" class="nav-brand">
-      <img src="../resources/images/logo_clipped.jpeg" alt="HOPAPCU Logo"/>
+      <img src="../resources/images/logo.jpeg" alt="HOPAPCU Logo"/>
       <div class="nav-brand-text">
         HOPAPCU
-        <span>Honey Producers & Processors Cooperative Union of Malawi</span>
+        <span>Honey Producers & Processors Cooperative Union</span>
       </div>
     </a>
 
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="../About-page/about.html">About</a></li>
-      <li><a href="../programmes/programmes.html">Programmes</a></li>
-      <li><a href="../membership-page/membership.html">Membership</a></li>
-      <li><a href="../marketplace/marketplace.html">Marketplace</a></li>
+      <li><a href="programmes.html">Programmes</a></li>
+      <li><a href="membership.html">Membership</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
       <li><a href="news.html">News</a></li>
-      <li><a href="../contact/contact.html">Contact</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
 
     <button class="hamburger" aria-label="Open menu">
@@ -46,19 +44,19 @@
   </nav>
 
 
-  <!-- HERO-->
+  <!-- HERO: Solid charcoal background, text only -->
   <section class="hero">
+    <div class="hero-image">
+      <img src="../resources/images/beekeeping3.jpg" alt="Beekeepers working in the apiary"/>
+    </div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Honey Cooperative Umbrella</p>
-      <h1 class="hero-title">Honey Producers & Processors Cooperative Union of Malawi (HOPAPCU)</h1>
+      <p class="hero-eyebrow">Malawi's Beekeeping Cooperative Union</p>
+      <h1 class="hero-title">Where Beekeeping Sustains Livelihood and Environment</h1>
       <p class="hero-sub">
         HOPAPCU connects honey producers and processors across Malawi
         to reliable markets, fair prices, and a community built on
         sustainable beekeeping.
       </p>
-      <div class="hero-image">
-      <img src="../resources/images/beekeeping3.jpg" alt="Beekeepers working in the apiary"/>
-    </div>
       <div class="hero-ctas">
         <a href="membership.html" class="btn-primary">Join Now</a>
         <a href="../About-page/about.html" class="btn-outline">Learn More</a>
@@ -66,7 +64,7 @@
     </div>
   </section>
 
-<!-- the arrows must be on the bottom on mobile one image must take the full width with subtle hitns of other images to the left and right -->
+
   <!-- GALLERY CAROUSEL: Horizontal scroll with arrow controls -->
   <section class="gallery">
     <div class="gallery-inner">
@@ -88,13 +86,13 @@
           </div>
           <div class="gallery-card">
             <div class="gallery-image-wrapper">
-              <img src="../resources/images/in-door-meeting.jpeg" alt="Community"/>
+              <img src="../resources/images/Ambasssador meeting.jpeg" alt="Community"/>
             </div>
             <p class="gallery-card-caption">Building Community</p>
           </div>
           <div class="gallery-card">
             <div class="gallery-image-wrapper">
-              <img src="../resources/images/training.jpeg" alt="Impact"/>
+              <img src="../resources/images/beekeeping3.jpg" alt="Impact"/>
             </div>
             <p class="gallery-card-caption">Community Impact</p>
           </div>
@@ -119,7 +117,10 @@
           Leading Sustainable Beekeeping<br/>Across Malawi
         </h2>
         <p class="mission-text">
-          HOPACU is a National Honey Cooperative Union Umbrella organisation - promoting, serving and coordinating the primary Honey cooperatives across the country.
+          The Honey Producers & Processors Cooperative Union aims to become
+          a world-class producer, processor, and marketer of specialty certified
+          honeybee products, utilizing sustainable cooperatives and modern
+          bee farming systems to improve livelihoods for beekeepers across Malawi.
         </p>
       </div>
     </div>
@@ -166,27 +167,27 @@
   </section>
 
 
-  <!-- STATS BAR -->
+  <!-- STATS BAR
   <section class="stats">
     <div class="stats-inner">
 
       <div class="stat fade-in">
-        <div class="stat-number">xxx</div>
+        <div class="stat-number">150+</div>
         <div class="stat-label">Active Members</div>
       </div>
 
       <div class="stat fade-in">
-        <div class="stat-number">xx</div>
+        <div class="stat-number">8</div>
         <div class="stat-label">Districts Covered</div>
       </div>
 
       <div class="stat fade-in">
-        <div class="stat-number">xx</div>
+        <div class="stat-number">15+</div>
         <div class="stat-label">Partner Organisations</div>
       </div>
 
     </div>
-  </section>
+  </section> -->
 
 
   <!-- NEWS & ACTIVITIES -->
@@ -205,48 +206,35 @@
 
         <article class="news-card fade-in">
           <div class="news-img">
+            <img src="../resources/images/in-door-meeting.jpeg"/>
+          </div>
+          <div class="news-body">
+            <p class="news-date">June 2026</p>
+            <h3 class="news-title">HOPAPCU Union Launched</h3>
+            <p class="news-excerpt">
+              HOPAPCU was established to provide a forum for honey producers, processors, and buyers to discuss issues pertinent to the honey sector and strengthen beekeeping across Malawi. <a href="https://web.facebook.com/story.php?story_fbid=1084601854260831&id=100081330802581&post_id=100081330802581_1084601854260831&rdid=ucCIo8eaGlW6iBSq#" target="_blank" rel="noopener noreferrer">click here to read more</a>
+            </p>
+            <a href="news.html" class="news-link">Read more →</a>
+          </div>
+        </article>
+
+        <article class="news-card fade-in">
+          <div class="news-img">
             <img src="../resources/images/Ambasssador meeting.jpeg" alt="International Partners Meeting"/>
           </div>
           <div class="news-body">
             <p class="news-date">August 2026</p>
             <h3 class="news-title">HOPAPCU Meets with International Partners to Expand Honey Export Markets</h3>
             <p class="news-excerpt">
-              Senior leadership held discussions with international partners
+              President held discussions with international partners
               on expanding HOPAPCU's reach into global honey markets.
             </p>
             <a href="news.html" class="news-link">Read more →</a>
           </div>
         </article>
 
-        <article class="news-card fade-in">
-          <div class="news-img">
-            <img src="../resources/images/training.jpeg" alt="Training Programme"/>
-          </div>
-          <div class="news-body">
-            <p class="news-date">August 2026</p>
-            <h3 class="news-title">Member Training Programme Strengthens Beekeeping Capacity Across Nkhata-Bay</h3>
-            <p class="news-excerpt">
-              HOPAPCU hosted its latest capacity-building session,
-              equipping members with modern beekeeping techniques.
-            </p>
-            <a href="news.html" class="news-link">Read more →</a>
-          </div>
-        </article>
+        
 
-        <article class="news-card fade-in">
-          <div class="news-img">
-            <img src="../resources/images/in-door-meeting.jpeg" alt="General Meeting"/>
-          </div>
-          <div class="news-body">
-            <p class="news-date">July 2026</p>
-            <h3 class="news-title">Annual General Meeting Brings Together Members from Across Malawi</h3>
-            <p class="news-excerpt">
-              Members gathered for the annual general meeting to review
-              progress, elect leadership, and plan for the year ahead.
-            </p>
-            <a href="news.html" class="news-link">Read more →</a>
-          </div>
-        </article>
 
       </div>
     </div>
@@ -318,28 +306,35 @@
   </section>
 
 
-  <!-- MAP SECTION -->
-  <section class="map-section">
-    <div class="map-inner">
-      <div class="map-content">
-        <h2 class="map-title">Visit Us</h2>
-        <p class="map-address">
-          FAAD Malawi Building<br/>
+  <!-- OFFICE SECTION -->
+  <section class="office-section">
+    <div class="office-inner">
+      <div class="office-content">
+        <h2 class="office-title">Our Office</h2>
+        <p class="office-location">
+          <strong>FAAD Malawi Building</strong><br/>
           Mkondezi, Nkhata-Bay, Malawi
         </p>
-        <div class="map-contact">
+        <p class="office-description">
+          HOPAPCU's central management unit is located in Nkhata-Bay, serving as the hub for our cooperative network across Malawi. Visit us to learn more about our work and connect with our team.
+        </p>
+        <div class="office-contact">
           <p><strong>Phone:</strong> +265 996 641 603 / +265 883 159 162</p>
           <p><strong>Email:</strong> info@hopapcu.mw</p>
+          <p><strong>Hours:</strong> Monday - Friday, 8:00 AM - 5:00 PM CAT</p>
         </div>
+        <a href="contact.html" class="btn-contact">Get Directions</a>
       </div>
-      <!-- Map container -->
-      <div class="map-container" id="mapContainer"></div>
+      <!-- Office image -->
+      <div class="office-image">
+        <img src="../resources/images/Mkondezi_map.png" alt="HOPAPCU Office"/>
+      </div>
     </div>
   </section>
 
 
   <!-- FOOTER -->
-  <footer>
+  <footer id="footer">
     <div class="footer-inner">
       <div class="footer-grid">
         <div class="footer-brand">
@@ -382,7 +377,7 @@
     </div>
   </footer>
 
-  <script src="./map-homepage.js"></script>
+
   <script src="./homepage.js"></script>
 </body>
 </html>
