@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize map centered on HOPAPCU office
   const map = L.map('mapContainer').setView([-11.623556, 33.245531], 13);
 
-  // Add Esri satellite tiles (free, no API key needed)
+  //  Esri satellite tiles 
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-    attribution: 'Tiles &copy; Esri',
+    attribution: '&copy; Esri',
     maxZoom: 18
   }).addTo(map);
 
