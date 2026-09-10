@@ -1,79 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="HOPAPCU Honey and Beekeeping Products. Pure, sustainable honey and equipment from Malawian beekeepers."/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HOPAPCU Marketplace. Buy honey, beeswax, and beekeeping equipment directly from Malawian producers."/>
   <title>Marketplace - HOPAPCU</title>
-
-  <link rel="shortcut icon" href="../images-and-resources/images/logo_clipped.jpeg" type="image/x-icon">
   <link rel="stylesheet" href="./marketplace.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
-
-  <!-- NAVBAR -->
-  <nav>
-    <a href="../Homepage/homepage.html" class="nav-brand">
-      <img src="../images-and-resources/images/logo_clipped.jpeg" alt="HOPAPCU Logo"/>
-      <div class="nav-brand-text">
-        HOPAPCU
-        <span>Honey Producers & Processors Cooperative Union</span>
+  <!-- HEADER/NAV -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <img src="../images-and-resources/images/logo_clipped.jpeg" alt="HOPAPCU Logo"/>
       </div>
-    </a>
-
-    <ul class="nav-links">
-      <li><a href="../Homepage/homepage.html">Home</a></li>
-      <li><a href="../About-page/about.html">About</a></li>
-      <li><a href="../programmes/">Programmes</a></li>
-      <li><a href="../membership-page/membership.html">Membership</a></li>
-      <li><a href="../marketplace/marketplace.html">Marketplace</a></li>
-      <li><a href="../resources/resources.html">Resources</a></li>
-      <li><a href="../contact/contact.html">Contact</a></li>
-    </ul>
-
-    <button class="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+      <nav class="nav">
+        <button class="hamburger">☰</button>
+        <ul class="nav-links">
+          <li><a href="../Homepage/homepage.html">Home</a></li>
+          <li><a href="../About-page/about.html">About</a></li>
+          <li><a href="../programmes/programmes.html">Programmes</a></li>
+          <li><a href="../membership-page/membership.html">Membership</a></li>
+          <li><a href="../marketplace/marketplace.html">Marketplace</a></li>
+          <li><a href="../resources/resources.html">Resources</a></li>
+          <li><a href="../contact/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
 
   <!-- PAGE HERO -->
   <section class="page-header">
     <div class="page-header-content">
-      <h1>Marketplace</h1>
-      <p>Pure, sustainable honey and beekeeping products from Malawi's trusted beekeeping communities</p>
+      <h1>HOPAPCU Marketplace</h1>
+      <p>Supporting Malawian beekeepers by connecting you directly with quality honey, beeswax, and equipment from cooperative producers.</p>
     </div>
     <div class="page-header-image">
-      <img src="../images-and-resources/images/beekeeper-carrying-frame.jpg" alt="HOPAPCU honey and beekeeping products"/>
-    </div>
-  </section>
-
-
-  <!-- WHY BUY FROM HOPAPCU -->
-  <section class="section-why-buy">
-    <div class="section-inner">
-      <h2 class="section-title fade-in">Why Buy From HOPAPCU</h2>
-      <div class="why-buy-grid">
-        <div class="why-buy-card fade-in">
-          <div class="why-buy-icon">🐝</div>
-          <h3>Direct From Beekeepers</h3>
-          <p>No middlemen. Every purchase supports Malawian beekeepers directly. Fair prices, fair trade.</p>
-        </div>
-        <div class="why-buy-card fade-in">
-          <div class="why-buy-icon">🌱</div>
-          <h3>100% Sustainable</h3>
-          <p>Produced using sustainable methods that protect both bees and the environment across Malawi.</p>
-        </div>
-        <div class="why-buy-card fade-in">
-          <div class="why-buy-icon">✓</div>
-          <h3>Quality Guaranteed</h3>
-          <p>Every product is tested and verified by our cooperative network. You get what you pay for.</p>
-        </div>
-      </div>
+      <img src="../images-and-resources/images/market-place hero.jpg" alt="Marketplace"/>
     </div>
   </section>
 
@@ -82,63 +46,66 @@
   <section class="section-products">
     <div class="section-inner">
       <h2 class="section-title fade-in">Our Products</h2>
+      <p class="section-intro fade-in">
+        All products are sourced directly from HOPAPCU member cooperatives. Quality assured, sustainably produced, supporting local livelihoods.
+      </p>
 
       <!-- HONEY CATEGORY -->
       <div class="category-block fade-in">
         <h3 class="category-title">Honey</h3>
         <div class="products-grid">
 
-          <!-- Product 1: Comb Honey -->
-          <div class="product-card fade-in" data-product-id="HOPAPCU-HCB-001">
+          <!-- Product 1: Wildflower Honey -->
+          <div class="product-card fade-in" data-product-id="HOPAPCU-HNY-001">
             <div class="product-image">
-              <img src="../images-and-resources/images/comb-honey.jpg" alt="Comb Honey"/>
+              <img src="../images-and-resources/images/honeybottle.jpg" alt="Wildflower Honey"/>
             </div>
             <div class="product-info">
-              <h4 class="product-name">Comb Honey</h4>
-              <p class="product-size">500g</p>
-              <p class="product-desc">Fresh honeycomb from Nkhata-Bay apiaries, harvested using sustainable methods. Pure, unprocessed comb with honey.</p>
+              <h4 class="product-name">Wildflower Honey</h4>
+              <p class="product-size">500ml</p>
+              <p class="product-desc">Raw, unfiltered wildflower honey from Nkhata-Bay cooperatives. Rich, complex flavor with natural enzymes and pollen. No additives. Direct from the hive.</p>
               <p class="product-location">From: Nkhata-Bay Region</p>
               <div class="product-footer">
-                <span class="product-price">MK 6,500</span>
+                <span class="product-price">MK 3,500</span>
                 <span class="product-stock">In Stock</span>
               </div>
-              <button class="btn-order-now" data-product="HOPAPCU-HCB-001">Order Now</button>
+              <button class="btn-order-now" data-product="HOPAPCU-HNY-001">Order Now</button>
             </div>
           </div>
 
-          <!-- Product 2: Bottled Raw Honey -->
-          <div class="product-card fade-in" data-product-id="HOPAPCU-HBT-002">
+          <!-- Product 2: Forest Honey -->
+          <div class="product-card fade-in" data-product-id="HOPAPCU-HNY-002">
             <div class="product-image">
-              <img src="../images-and-resources/images/honeybottle.jpg" alt="Bottled Raw Honey"/>
+              <img src="../images-and-resources/images/comb-honey.jpg" alt="Forest Honey"/>
             </div>
             <div class="product-info">
-              <h4 class="product-name">Bottled Raw Honey</h4>
-              <p class="product-size">1kg</p>
-              <p class="product-desc">Golden raw honey from Mzuzu region beekeepers. Unfiltered, retains all natural enzymes. Perfect for daily use.</p>
-              <p class="product-location">From: Mzuzu Region</p>
+              <h4 class="product-name">Forest Honey - Comb</h4>
+              <p class="product-size">300g</p>
+              <p class="product-desc">Raw honeycomb with liquid honey from forest beekeeping in Rumphi. Authentic forest flavor. Chew the wax for natural benefits. Premium artisanal product from expert beekeepers.</p>
+              <p class="product-location">From: Rumphi Region</p>
               <div class="product-footer">
-                <span class="product-price">MK 15,500</span>
+                <span class="product-price">MK 4,200</span>
                 <span class="product-stock">In Stock</span>
               </div>
-              <button class="btn-order-now" data-product="HOPAPCU-HBT-002">Order Now</button>
+              <button class="btn-order-now" data-product="HOPAPCU-HNY-002">Order Now</button>
             </div>
           </div>
 
           <!-- Product 3: Bulk Honey -->
-          <div class="product-card fade-in" data-product-id="HOPAPCU-HBK-003">
+          <div class="product-card fade-in" data-product-id="HOPAPCU-HNY-003">
             <div class="product-image">
               <img src="../images-and-resources/images/honey-in-pail.webp" alt="Bulk Honey"/>
             </div>
             <div class="product-info">
-              <h4 class="product-name">Bulk Honey</h4>
-              <p class="product-size">20kg Pail</p>
-              <p class="product-desc">Commercial-grade honey from Mzenga cooperative producers. For restaurants, retailers, and large households. Delivered in food-safe drum.</p>
-              <p class="product-location">From: Mzenga Region</p>
+              <h4 class="product-name">Bulk Honey (5kg)</h4>
+              <p class="product-size">5 kilograms</p>
+              <p class="product-desc">Perfect for businesses, restaurants, or food processors. High-quality raw honey from multiple cooperative sources. Food-safe bucket. Contact us for bulk discounts on larger quantities.</p>
+              <p class="product-location">From: Multiple Districts</p>
               <div class="product-footer">
-                <span class="product-price">MK 150,000</span>
+                <span class="product-price">MK 15,000</span>
                 <span class="product-stock">In Stock</span>
               </div>
-              <button class="btn-order-now" data-product="HOPAPCU-HBK-003">Order Now</button>
+              <button class="btn-order-now" data-product="HOPAPCU-HNY-003">Order Now</button>
             </div>
           </div>
 
@@ -153,10 +120,10 @@
           <!-- Product 4: Beeswax -->
           <div class="product-card fade-in" data-product-id="HOPAPCU-BWX-004">
             <div class="product-image">
-              <img src="../images-and-resources/images/beeswax.jpg" alt="Raw Beeswax Blocks"/>
+              <img src="../images-and-resources/images/beeswax.jpg" alt="Beeswax"/>
             </div>
             <div class="product-info">
-              <h4 class="product-name">Raw Beeswax Blocks</h4>
+              <h4 class="product-name">Pure Beeswax</h4>
               <p class="product-size">500g</p>
               <p class="product-desc">Pure beeswax from Lilongwe beekeeping groups. Perfect for candles, cosmetics, or natural leather conditioning. Supports local producers.</p>
               <p class="product-location">From: Lilongwe Region</p>
@@ -232,7 +199,7 @@
         <div class="step-card fade-in">
           <div class="step-number">2</div>
           <h3>Fill Order Details</h3>
-          <p>Complete the order form with your contact info, quantity, and delivery preference.</p>
+          <p>Complete the order form with your contact info, quantity, and any special requests.</p>
         </div>
         <div class="step-card fade-in">
           <div class="step-number">3</div>
@@ -248,14 +215,8 @@
   <section class="section-cta">
     <div class="section-inner">
       <h2 class="cta-title fade-in">Ready to Support Malawian Beekeepers?</h2>
-      <p class="cta-text fade-in">
-        Every purchase directly supports sustainable beekeeping communities across Malawi.
-      </p>
-      <div class="cta-contact fade-in">
-        <p><strong>Questions?</strong> Contact us anytime</p>
-        <p>Phone: +265 996 641 603 / +265 883 159 162</p>
-        <p>Email: honeyproducersunion@gmail.com</p>
-      </div>
+      <p class="cta-text fade-in">Every purchase directly supports small-scale producers and cooperative development across Malawi.</p>
+      <a href="#" class="cta-button fade-in">Browse All Products</a>
     </div>
   </section>
 
@@ -266,7 +227,8 @@
       <button class="modal-close" id="modalClose">&times;</button>
       <h2 class="modal-title">Place Your Order</h2>
       
-      <form id="orderForm" class="order-form">
+      <form id="orderForm" class="order-form" method="POST" action="https://api.web3forms.com/submit">
+        <input type="hidden" name="access_key" value="dfe54209-98ae-480c-a603-c33b5e3e80fe">
         
         <!-- Product Info (Read-only) -->
         <div class="form-group">
@@ -341,7 +303,7 @@
             <li><a href="../Homepage/homepage.html">Home</a></li>
             <li><a href="../About-page/about.html">About Us</a></li>
             <li><a href="../programmes/programmes.html">Programmes</a></li>
-            <li><a href="../membership/membership.html">Membership</a></li>
+            <li><a href="../membership-page/membership.html">Membership</a></li>
             <li><a href="../marketplace/marketplace.html">Marketplace</a></li>
             <li><a href="../resources/resources.html">Resources</a></li>
             <li><a href="../contact/contact.html">Contact</a></li>
@@ -349,20 +311,21 @@
         </div>
 
         <div class="footer-col">
-          <h4>Contact Us</h4>
-          <ul>
-            <li>FAAD Malawi Building</li>
-            <li>Mkondezi, Nkhata-Bay</li>
-            <li><a href="tel:+265996641603">+265 996 641 603</a></li>
-            <li><a href="tel:+265883159162">+265 883 159 162</a></li>
-            <li><a href="mailto:honeyproducersunion@gmail.com">honeyproducersunion@gmail.com</a></li>
-          </ul>
+          <h4>Contact Info</h4>
+          <p>Email: <a href="mailto:honeyproducersunion@gmail.com">honeyproducersunion@gmail.com</a></p>
+          <p>Phone: <a href="tel:+265996641603">+265 996 641 603</a></p>
+          <p>Location: Mkondezi, Nkhata-Bay, Malawi</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>About HOPAPCU</h4>
+          <p>Supporting honey producers and processors across Malawi through cooperative strength, training, and market linkage.</p>
         </div>
 
       </div>
 
       <div class="footer-bottom">
-        © 2026 HOPAPCU - All rights reserved.
+        <p>&copy; 2026 HOPAPCU. All rights reserved.</p>
       </div>
     </div>
   </footer>

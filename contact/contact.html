@@ -1,57 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Contact HOPAPCU. Get in touch with Malawi's beekeeping cooperative."/>
-  <title>Contact - HOPAPCU</title>
-
-  <link rel="shortcut icon" href="../images-and-resources/images/logo_clipped.jpeg" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact HOPAPCU. Get in touch with the Honey Producers & Processors Cooperative Union of Malawi."/>
+  <title>Contact Us - HOPAPCU</title>
   <link rel="stylesheet" href="./contact.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 </head>
 <body>
-
-  <!-- NAVBAR -->
-  <nav>
-    <a href="../Homepage/homepage.html" class="nav-brand">
-      <img src="../images-and-resources/images/logo_clipped.jpeg" alt="HOPAPCU Logo"/>
-      <div class="nav-brand-text">
-        HOPAPCU
-        <span>Honey Producers & Processors Cooperative Union</span>
+  <!-- HEADER/NAV -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <img src="../images-and-resources/images/logo_clipped.jpeg" alt="HOPAPCU Logo"/>
       </div>
-    </a>
-
-    <ul class="nav-links">
-      <li><a href="../Homepage/homepage.html">Home</a></li>
-      <li><a href="../About-page/about.html">About</a></li>
-      <li><a href="../programmes/programmes.html">Programmes</a></li>
-      <li><a href="../membership/membership.html">Membership</a></li>
-      <li><a href="../marketplace/marketplace.html">Marketplace</a></li>
-      <li><a href="../resources/resources.html">Resources</a></li>
-      <li><a href="../contact/contact.html">Contact</a></li>
-    </ul>
-
-    <button class="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+      <nav class="nav">
+        <button class="hamburger">☰</button>
+        <ul class="nav-links">
+          <li><a href="../Homepage/homepage.html">Home</a></li>
+          <li><a href="../About-page/about.html">About</a></li>
+          <li><a href="../programmes/programmes.html">Programmes</a></li>
+          <li><a href="../membership-page/membership.html">Membership</a></li>
+          <li><a href="../marketplace/marketplace.html">Marketplace</a></li>
+          <li><a href="../resources/resources.html">Resources</a></li>
+          <li><a href="../contact/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
 
   <!-- PAGE HERO -->
   <section class="page-header">
     <div class="page-header-content">
-      <h1>Get in Touch</h1>
-      <p>Have questions? Want to join? Interested in partnering? We'd love to hear from you. Reach out using any method below.</p>
+      <h1>Get In Touch</h1>
+      <p>Have questions about beekeeping, membership, or our programmes? We'd love to hear from you. Reach out and let's connect.</p>
     </div>
     <div class="page-header-image">
-      <img src="../images-and-resources/images/beefarmer-in-field.jpg" alt="HOPAPCU office and team"/>
+      <img src="../images-and-resources/images/community-engagement.jpg" alt="Community engagement"/>
     </div>
   </section>
 
@@ -96,7 +82,9 @@
           <p>Fill out the form below and we'll get back to you as soon as possible.</p>
         </div>
 
-        <form id="contactForm" class="contact-form">
+        <form id="contactForm" class="contact-form" method="POST" action="https://api.web3forms.com/submit">
+          <input type="hidden" name="access_key" value="dfe54209-98ae-480c-a603-c33b5e3e80fe">
+          
           <div class="form-group">
             <label for="name">Full Name *</label>
             <input type="text" id="name" name="name" required/>
@@ -111,6 +99,7 @@
             <label for="phone">Phone Number</label>
             <input type="tel" id="phone" name="phone"/>
           </div>
+          
           <div class="form-group">
             <label for="message">Message *</label>
             <textarea id="message" name="message" rows="5" required></textarea>
@@ -123,70 +112,8 @@
   </section>
 
 
-  <!-- MAP SECTION -->
-  <section class="section-map-contact">
-    <div class="section-inner">
-      <h2 class="section-title fade-in">Find Us on the Map</h2>
-      <p class="section-intro fade-in">
-        Visit our office in Nkhata-Bay to meet our team and learn more about HOPAPCU's work.
-      </p>
-
-      <div class="map-wrapper fade-in">
-        <div id="mapContainer"></div>
-        <div class="map-info">
-          <h3>HOPAPCU Office</h3>
-          <p><strong>Address:</strong> FAAD Malawi Building, Mkondezi, Nkhata-Bay</p>
-          <p><strong>Phone:</strong> <a href="tel:+265996641603">+265 996 641 603</a></p>
-          <p><strong>Hours:</strong> Monday - Friday, 8:00 AM - 5:00 PM CAT</p>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=-11.623556,33.245531" target="_blank" class=" .btn-get-directions">Get Directions</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- FAQ SECTION -->
-  <section class="section-faq">
-    <div class="section-inner">
-      <h2 class="section-title fade-in">Frequently Asked Questions</h2>
-
-      <div class="faq-grid">
-        <div class="faq-item fade-in">
-          <h3 class="faq-question">What is HOPAPCU?</h3>
-          <p class="faq-answer">HOPAPCU is the Honey Producers & Processors Cooperative Union of Malawi. We bring together beekeeping cooperatives, groups, and individual beekeepers to strengthen production, access markets, and build sustainable livelihoods.</p>
-        </div>
-
-        <div class="faq-item fade-in">
-          <h3 class="faq-question">How do I join HOPAPCU?</h3>
-          <p class="faq-answer">Visit our <a href="membership.html">Membership page</a> to learn about membership types and fees. You can also contact us directly and we'll guide you through the registration process.</p>
-        </div>
-
-        <div class="faq-item fade-in">
-          <h3 class="faq-question">Do you offer training?</h3>
-          <p class="faq-answer">Yes! We run regular training programmes on beekeeping techniques, business management, and sustainable production. Contact us to ask about upcoming workshops in your district.</p>
-        </div>
-
-        <div class="faq-item fade-in">
-          <h3 class="faq-question">How can I buy HOPAPCU honey and products?</h3>
-          <p class="faq-answer">Visit our <a href="marketplace.html">Marketplace</a> to browse and order honey, beeswax, and beekeeping equipment directly from our members. We deliver across Malawi.</p>
-        </div>
-
-        <div class="faq-item fade-in">
-          <h3 class="faq-question">What are your response times?</h3>
-          <p class="faq-answer">We aim to reply to all emails within 24 business hours. For urgent matters, please call us directly.</p>
-        </div>
-
-        <div class="faq-item fade-in">
-          <h3 class="faq-question">Are you open to partnerships?</h3>
-          <p class="faq-answer">Yes! We welcome partnerships with NGOs, government agencies, and organizations supporting beekeeping development. Use the contact form to tell us about your interest.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
   <!-- FOOTER -->
-  <footer id="footer">
+  <footer>
     <div class="footer-inner">
       <div class="footer-grid">
 
@@ -205,32 +132,33 @@
             <li><a href="../Homepage/homepage.html">Home</a></li>
             <li><a href="../About-page/about.html">About Us</a></li>
             <li><a href="../programmes/programmes.html">Programmes</a></li>
-            <li><a href="../membership/membership.html">Membership</a></li>
+            <li><a href="../membership-page/membership.html">Membership</a></li>
             <li><a href="../marketplace/marketplace.html">Marketplace</a></li>
             <li><a href="../resources/resources.html">Resources</a></li>
+            <li><a href="../contact/contact.html">Contact</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Contact Us</h4>
-          <ul>
-            <li>FAAD Malawi Building</li>
-            <li>Mkondezi, Nkhata-Bay</li>
-            <li><a href="tel:+265996641603">+265 996 641 603</a></li>
-            <li><a href="tel:+265883159162">+265 883 159 162</a></li>
-            <li><a href="mailto:honeyproducersunion@gmail.com">honeyproducersunion@gmail.com</a></li>
-          </ul>
+          <h4>Contact Info</h4>
+          <p>Email: <a href="mailto:honeyproducersunion@gmail.com">honeyproducersunion@gmail.com</a></p>
+          <p>Phone: <a href="tel:+265996641603">+265 996 641 603</a></p>
+          <p>Location: Mkondezi, Nkhata-Bay, Malawi</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>About HOPAPCU</h4>
+          <p>Supporting honey producers and processors across Malawi through cooperative strength, training, and market linkage.</p>
         </div>
 
       </div>
 
       <div class="footer-bottom">
-        © 2026 HOPAPCU - All rights reserved.
+        <p>&copy; 2026 HOPAPCU. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <script src="./map-contact.js"></script>
   <script src="./contact.js"></script>
 </body>
 </html>

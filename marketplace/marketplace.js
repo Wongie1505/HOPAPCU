@@ -42,6 +42,7 @@ if (hamburger && navLinks) {
 const modal = document.getElementById('orderModal');
 const modalClose = document.getElementById('modalClose');
 const orderForm = document.getElementById('orderForm');
+const submitBtn = orderForm.querySelector('button[type="submit"]');
 const orderButtons = document.querySelectorAll('.btn-order-now');
 
 const productName = document.getElementById('productName');
@@ -89,63 +90,39 @@ document.addEventListener('keydown', (e) => {
 
 
 /*
-  Order Form Submission
+  Order Form Submission with Web3Forms
   Collects form data and sends to email
 */
-orderForm.addEventListener('submit', (e) => {
+orderForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-  
-  // Collect all form data
-  const formData = {
-    productId: document.getElementById('productId').value,
-    productName: document.getElementById('productName').value,
-    name: document.getElementById('orderName').value,
-    email: document.getElementById('orderEmail').value,
-    phone: document.getElementById('orderPhone').value,
-    organization: document.getElementById('orderOrg').value || 'Not provided',
-    quantity: document.getElementById('orderQuantity').value,
-    delivery: document.getElementById('orderDelivery').value,
-    message: document.getElementById('orderMessage').value || 'No special requests',
-  };
-  
-  // Create email subject line
-  const emailSubject = `HOPAPCU Product Order: ${formData.productName} - ${formData.productId}`;
-  
-  // Create email body
-  const emailBody = `
-New Product Order Received
 
-PRODUCT DETAILS:
-Product: ${formData.productName}
-Product ID: ${formData.productId}
-Quantity: ${formData.quantity}
+  const formData = new FormData(orderForm);
 
-CUSTOMER INFORMATION:
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Organization: ${formData.organization}
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = "Sending...";
+  submitBtn.disabled = true;
 
-ORDER PREFERENCES:
-Delivery Method: ${formData.delivery}
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
 
-SPECIAL REQUESTS:
-${formData.message}
+    const data = await response.json();
 
----
-This order was submitted via the HOPAPCU Marketplace.
-Please contact the customer to confirm availability and arrange payment/delivery.
-`;
-  
-  // Create mailto link with all details
-  const mailtoLink = `mailto:info@hopapcu.mw?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-  
-  // Open default email client with pre-filled message
-  window.location.href = mailtoLink;
-  
-  // Close the modal after a short delay
-  setTimeout(() => {
-    modal.classList.remove('show');
-    orderForm.reset();
-  }, 500);
+    if (response.ok) {
+      alert("Success! Your order has been submitted. We'll contact you shortly to confirm.");
+      orderForm.reset();
+      modal.classList.remove('show');
+    } else {
+      alert("Error: " + (data.message || "Something went wrong"));
+    }
+
+  } catch (error) {
+    alert("Something went wrong. Please try again.");
+    console.error('Error:', error);
+  } finally {
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+  }
 });

@@ -1,5 +1,5 @@
 /*
-  Contact form handling and fade-in animations
+  Contact form with Web3Forms integration
 */
 
 // Fade-in on scroll
@@ -35,29 +35,41 @@ if (hamburger && navLinks) {
 }
 
 
-// Contact form submission (mailto)
+// Contact form submission with Web3Forms
 const contactForm = document.getElementById('contactForm');
+const submitBtn = contactForm.querySelector('button[type="submit"]');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const inquiryType = document.getElementById('inquiry-type').value;
-    const message = document.getElementById('message').value.trim();
+    const formData = new FormData(contactForm);
 
-    if (!name || !email || !inquiryType || !message) {
-      alert('Please fill out all required fields.');
-      return;
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Success! Your message has been sent. We'll contact you shortly.");
+        contactForm.reset();
+      } else {
+        alert("Error: " + (data.message || "Something went wrong"));
+      }
+
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+      console.error('Error:', error);
+    } finally {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
     }
-
-    const subject = `HOPAPCU Contact: ${inquiryType} from ${name}`;
-    const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\nInquiry Type: ${inquiryType}\n\nMessage:\n${message}`;
-
-    const mailtoLink = `mailto:info@hopapcu.mw?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailtoLink;
   });
 }
