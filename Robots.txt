@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wongie1505.github.io/HOPAPCU/sitemap.xml
