@@ -82,6 +82,7 @@ if (orderForm) {
   orderForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    document.getElementById("formStatus").textContent = "";
     const formData = new FormData(orderForm);
 
     const originalText = submitBtn.textContent;
@@ -101,11 +102,11 @@ if (orderForm) {
         orderForm.reset();
         orderModal.classList.remove('show');
       } else {
-        alert("Error: " + (data.message || "Something went wrong"));
+        document.getElementById("formStatus").textContent = "Error: " + (data.message || "Something went wrong");
       }
 
     } catch (error) {
-      alert("Something went wrong. Please try again.");
+      document.getElementById("formStatus").textContent = "Something went wrong. Please try again.";
       console.error('Error:', error);
     } finally {
       submitBtn.textContent = originalText;

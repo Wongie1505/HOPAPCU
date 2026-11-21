@@ -749,3 +749,27 @@ footer {
     height: 250px;
   }
 }
+.form-status {
+  font-size: 0.9rem;
+  color: #b00020;
+  margin-top: 0.5rem;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+/* Mobile: keep contact cards inside the screen */
+@media (max-width: 768px) {
+  .quick-contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .quick-contact-grid > * {
+    min-width: 0;
+  }
+
+  .contact-card a {
+    overflow-wrap: anywhere;
+  }
+}

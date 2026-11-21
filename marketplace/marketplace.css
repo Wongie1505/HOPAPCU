@@ -869,3 +869,23 @@ footer {
     height: 200px;
   }
 }
+.form-status {
+  font-size: 0.9rem;
+  color: #b00020;
+  margin-top: 0.5rem;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+/* Mobile: footer padding and long email wrapping */
+@media (max-width: 768px) {
+  footer {
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  footer a {
+    overflow-wrap: anywhere;
+  }
+}

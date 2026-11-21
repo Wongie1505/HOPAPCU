@@ -43,6 +43,7 @@ if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    document.getElementById("formStatus").textContent = "";
     const formData = new FormData(contactForm);
 
     const originalText = submitBtn.textContent;
@@ -61,11 +62,11 @@ if (contactForm) {
         alert("Success! Your message has been sent. We'll contact you shortly.");
         contactForm.reset();
       } else {
-        alert("Error: " + (data.message || "Something went wrong"));
+        document.getElementById("formStatus").textContent = "Error: " + (data.message || "Something went wrong");
       }
 
     } catch (error) {
-      alert("Something went wrong. Please try again.");
+      document.getElementById("formStatus").textContent = "Something went wrong. Please try again.";
       console.error('Error:', error);
     } finally {
       submitBtn.textContent = originalText;
