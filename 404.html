@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="robots" content="noindex"/>
+    <meta name="description" content="Page not found. Return to the HOPAPCU homepage, marketplace, resources or contact page."/>
+    <title>Page Not Found - HOPAPCU</title>
+
+    <link rel="shortcut icon" href="images-and-resources/images/logo_clipped.jpeg" type="image/x-icon"/>
+    <link rel="stylesheet" href="Homepage/homepage.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+    <style>
+      /* Layout for the not-found message */
+      .not-found {
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 4rem 1.5rem;
+        background: var(--cream);
+      }
+
+      .not-found-code {
+        font-family: var(--font-display);
+        font-size: clamp(4rem, 12vw, 7rem);
+        font-weight: 700;
+        color: var(--gold);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+
+      .not-found h1 {
+        font-family: var(--font-display);
+        font-size: clamp(1.6rem, 4vw, 2.2rem);
+        color: var(--black);
+        margin-bottom: 1rem;
+      }
+
+      .not-found p {
+        font-size: 1rem;
+        color: var(--muted);
+        line-height: 1.7;
+        max-width: 480px;
+        margin-bottom: 2rem;
+      }
+
+      .not-found-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .not-found-actions a {
+        display: inline-block;
+        padding: 0.8rem 1.6rem;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        border: 2px solid var(--gold);
+        color: var(--black);
+        background: var(--white);
+      }
+
+      .not-found-actions a.primary {
+        background: var(--gold);
+        color: var(--white);
+      }
+
+      .not-found-actions a:hover {
+        opacity: 0.85;
+      }
+
+      @media (max-width: 600px) {
+        .not-found-actions a {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <nav>
+      <a href="Homepage/homepage.html" class="nav-brand">
+        <img src="images-and-resources/images/logo_clipped.jpeg" alt="HOPAPCU Logo"/>
+        <div class="nav-brand-text">
+          HOPAPCU
+          <span>Honey Producers & Processors Cooperative Union</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="Homepage/homepage.html">Home</a></li>
+        <li><a href="About-page/about.html">About</a></li>
+        <li><a href="programmes/programmes.html">Programmes</a></li>
+        <li><a href="membership-page/membership.html">Membership</a></li>
+        <li><a href="marketplace/marketplace.html">Marketplace</a></li>
+        <li><a href="resources/resources.html">Resources</a></li>
+        <li><a href="contact/contact.html">Contact</a></li>
+      </ul>
+
+      <button class="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- NOT FOUND MESSAGE -->
+    <main class="not-found">
+      <p class="not-found-code">404</p>
+      <h1>Page not found</h1>
+      <p>The page you are looking for does not exist or may have moved. Try one of the links below.</p>
+      <div class="not-found-actions">
+        <a href="Homepage/homepage.html" class="primary">Go to homepage</a>
+        <a href="marketplace/marketplace.html">Marketplace</a>
+        <a href="contact/contact.html">Contact us</a>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+
+          <div class="footer-brand">
+            <a href="Homepage/homepage.html"><img src="images-and-resources/images/logo_clipped.jpeg" alt="HOPAPCU Logo"/></a>
+            <p class="footer-brand-name">HOPAPCU</p>
+            <p class="footer-brand-text">
+              Honey Producers & Processors Cooperative Union of Malawi.
+              Building better livelihoods through sustainable beekeeping.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="Homepage/homepage.html">Home</a></li>
+              <li><a href="About-page/about.html">About Us</a></li>
+              <li><a href="programmes/programmes.html">Programmes</a></li>
+              <li><a href="membership-page/membership.html">Membership</a></li>
+              <li><a href="marketplace/marketplace.html">Marketplace</a></li>
+              <li><a href="resources/resources.html">Resources</a></li>
+              <li><a href="contact/contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact Us</h4>
+            <ul>
+              <li>FAAD Malawi Building</li>
+              <li>Mkondezi, Nkhata-Bay</li>
+              <li><a href="tel:+265996641603">+265 996 641 603</a></li>
+              <li><a href="tel:+265883159162">+265 883 159 162</a></li>
+              <li><a href="mailto:honeyproducersunion@gmail.com">honeyproducersunion@gmail.com</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="footer-bottom">
+          &copy; 2026 HOPAPCU - All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      /* Open and close the mobile menu */
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    </script>
+  </body>
+</html>
