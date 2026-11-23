@@ -889,3 +889,10 @@ footer {
     overflow-wrap: anywhere;
   }
 }
+
+/* Desktop: larger base text so labels and body copy are readable */
+@media (min-width: 1200px) {
+  html {
+    font-size: 22px;
+  }
+}
